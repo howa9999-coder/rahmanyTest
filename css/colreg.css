@@ -1,0 +1,157 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:Roboto Mono    ;
+
+}
+ /* Custom Scrollbar */
+ ::-webkit-scrollbar {
+    width: 12px; /* Scrollbar width */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: gray; /* Scrollbar track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: gray; /* Scrollbar thumb */
+    border-radius: 6px; /* Rounded corners */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2c3e50; /* Hover effect */
+  }
+
+  /* Firefox Scrollbar (uses scrollbar-gutter for compatibility) */
+  * {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #2c3e50 #ddd; /* Thumb and track */
+  }
+/*HEADER*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 2px 2px black;
+    background-color: rgb(239, 237, 237);
+}
+.nav{
+    display: flex;
+    gap: 30px;
+}
+header>div{
+    display: flex;
+}
+h2{
+    margin-left: 15px;
+}
+button{
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+.classic-btn{
+    border: none;
+    padding: 8px;
+/*     box-shadow: 0 1px 1px black;
+    background-color: white; */
+    background-color: transparent;
+}
+#import-container{
+    padding: 10px 30px;
+    border: 1px solid black;
+    border-radius: 8px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*main*/
+main {
+    display: flex;
+    flex-direction: row;
+
+}
+/* Sidebar Styles */
+.sidebar {
+    display: block;
+    padding: 0px;
+    min-width: 350px;
+    height: calc(100vh - 50px);
+   /* flex: 1 1 200px; /* Grow, shrink, and initial size */
+    overflow: scroll;
+    background-color: rgb(239, 237, 237);
+
+}
+.container{
+    background-color: rgb(239, 237, 237);
+    box-shadow: 0 2px 2px black;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content{
+    
+    margin-bottom: 20px;
+    display: none;
+    
+
+}
+
+h4, .tab-btn> h4{
+    font-size: 18px;
+    margin: 10px;
+}
+.tab-btn{
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+.tab-box{
+
+    border-bottom: 2px solid rgba(229, 229, 229);
+}
+
+.tab-box .tab-btn.active{
+    color: #007bff;
+}
+.content-box{
+       /* flex-wrap: wrap;*/
+   height: calc(100vh - 50px);
+   /* flex: 1 1 200px; /* Grow, shrink, and initial size */
+    overflow: scroll;
+}
+.content-box .content{
+    display: none;
+    padding: 20px;
+    padding-left: 50px;
+    text-align: justify;
+
+    
+    
+}
+.content-box .content ul,  .content-box .content h4{
+    margin: 20px;
+}
+.content-box .content h3{
+    margin: 20px;
+    color: #007bff;
+    font-weight: 600;
+}
+.content-box .content.active{
+    display: block;
+
+}
+.content-box .content h2{
+    margin-bottom: 10px;
+}
