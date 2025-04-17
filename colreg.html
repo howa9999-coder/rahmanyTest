@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Aref+Ruqaa:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/colreg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Rahmany | Colreg</title>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h2><a style="text-decoration: none; color: black;" href="index.html"><i class="fas fa-anchor"></i> Rahmany</a></h2>
+        </div>
+        <button class="menu-btn" style="background-color: rgb(239, 237, 237); border: 1px solid black; border-radius:  10px; padding:5px 10px; " id="menuBtn"><i class="fas fa-bars"></i></button>
+        <div class="nav" id="navMenu">
+            <button class="classic-btn sidebar-btn remove">Content</button>
+            <button class="classic-btn"><a style="text-decoration: none; color: black;" href="index.html">Home</a></button>
+            <button class="classic-btn"><a style="text-decoration: none; color: black;" href="map.html">Interactive Map</a></button>
+            <button class="classic-btn"><a style="text-decoration: none; color: black;" href="formulas.html">NavFormulas</a></button>
+            <button class="classic-btn"><a style="text-decoration: none; color: black;" href="unclos.html">UNCLOS</a></button>
+            <button class="classic-btn"><a style="text-decoration: none; color: black;" href="marpol.html">Marpol</a></button>
+            <button class="classic-btn" popovertarget="n-b"><i class="fas fa-sticky-note" style="color: #4169E1;"></i></button>
+            <button onclick="fullScreenview()" class="classic-btn"><i class="fas fa-expand"></i></button>
+        </div>
+    </header>
+    <main class="container">
+        <aside class="sidebar tab-box">
+            <div class="btns">
+                <h4>COLREGs</h4>
+                <button class="tab-btn intro-btn">Introduction</button>
+                <h4>General</h4>
+                <button class="tab-btn">Application</button>
+                <button class="tab-btn">Responsability</button>
+                <button class="tab-btn">Definitions</button>
+                <h4>Lights & Shapes</h4>
+                <button class="tab-btn">Basic Light Configurations</button>
+                <button class="tab-btn">Day Shapes</button>
+                <button class="tab-btn">Lights & Shapes</button>
+                <h4>Steering & Sailing Rules</h4>
+                <button class="tab-btn">Priority Hierarchy</button>
+                <button class="tab-btn">Key Scenarios</button>
+            </div>
+        </aside>
+
+        <div class="content-box">
+            <!--===================COLREG INTRODUCTION====================-->
+            <div class="content intro">
+                <h2>Introduction to the International Regulations for Preventing Collisions at Sea (COLREGs)</h2>
+                <p>
+                    The International Regulations for Preventing Collisions at Sea (COLREGs) are the globally recognized rules governing maritime navigation to ensure safety and prevent collisions between vessels. Established by the International Maritime Organization (IMO) and first adopted in 1972, these regulations provide standardized procedures for:
+                </p>
+                <ul>
+                    <li><b>Steering and Sailing Rules</b> (Right-of-way, overtaking, crossing, and head-on situations)</li>
+                    <li><b>Lights and Shapes</b> (Visual signals for day and night)</li>
+                    <li><b>Sound and Light Signals</b> (Fog signals, maneuvering warnings)</li>
+                    <li><b>Responsibilities of Vessels</b> (Based on type, size, and operational status)</li>
+                    <li><b></b></li>
+                </ul>
+
+                <h3>Why Are COLREGs Important?</h3>
+                <ul>
+                    <li><b>Universal Standardization</b> – Ensures all mariners follow the same rules, reducing confusion.</li>
+                    <li><b>Collision Prevention</b> – Clear guidelines for navigation in all conditions (good visibility, restricted visibility, and emergencies).</li>
+                    <li><b>Legal Framework</b> – Used in accident investigations to determine fault and liability.</li>
+                </ul>
+
+                <h3>The COLREGs include 41 rules divided into six sections:</h3>
+                <h4>Part A - General (Rules 1-3)</h4>
+                <h4>Part B - Steering and sailing (Rules 4-19)</h4>
+                <h4>Part C - Lights and shapes (Rules 20-31)</h4>
+                <h4>Part D - Sound and light signals (Rules 32-37)</h4>
+                <h4>Part E - Exemptions</h4>
+                <h4>Part F - Verification of compliance with the provisions of the Convention (Rules 39-41)</h4>
+
+                <h3>The COLREGs include four annexes:</h3>
+                <ul>
+                    <li>Annex I - Positioning and technical details of lights and shapes</li>
+                    <li>Annex II - Additional signals for fishing vessels fishing in close proximity</li>
+                    <li>Annex III - Technical details of sounds signal appliances</li>
+                    <li>Annex IV - Distress signals, which lists the signals indicating distress and need of assistance.</li>
+
+                </ul>
+            </div>
+            <!--===================GENERAL====================-->
+                        <!--===================APPLICATION====================-->
+            <div class="content">
+                <h2>Application</h2>
+                <h3 style="color: black;"><b>Rule 1</b> - states that the rules apply to all vessels upon the high seas and all waters connected to the high seas and navigable by seagoing vessels.</h3>
+
+                <p style="margin-top: 20px;">(a) These Rules shall apply to all vessels upon the high seas and in all waters connected therewith navigable by seagoing vessels.</p>
+
+                <p style="margin-top: 20px;">(b) Nothing in these Rules shall interfere with the operation of special rules made by an appropriate authority for roadsteads, harbours, rivers, lakes or inland waterways connected with the high seas and navigable by seagoing vessels. Such special rules shall conform as closely as possible to these Rules.</p>
+
+                <p style="margin-top: 20px;">(c) Nothing in these Rules shall interfere with the operation of any special rules made by the Government of any State with respect to additional station or signal lights, shapes or whistle signals for ships of war and vessels proceeding under convoy, or with respect to additional station or signal lights or shapes for fishing vessels engaged in fishing as a fleet. These additional station or signal lights, shapes or whistle signals shall, so far as possible, be such that they cannot be mistaken for any light, shapes or signal authorized elsewhere under these Rules.</p>
+
+                <p style="margin-top: 20px;">(d) Traffic separation schemes may be adopted by the Organization for the purpose of these Rules.</p>
+
+                <p style="margin-top: 20px;">(e) Whenever the Government concerned shall have determined that a vessel of special construction or purpose cannot comply fully with the provisions of any of these Rules with respect to the number, position, range or arc of visibility of lights or shapes, as well as to the disposition and characteristics of sound-signalling appliances, such vessel shall comply with such other provisions in regard to the number, position, range or arc of visibility of lights or shapes, as well as to the disposition and characteristics of sound-signalling appliances, as her Government shall have determined to be the closest possible compliance with these Rules in respect to that vessel.</p>
+            </div>
+                        <!--===================RESPONSABILITY====================-->
+                        <div class="content">
+                <h2>Responsability</h2>
+                <h3 style="color: black;"><b>Rule 2</b> - covers the responsibility of the master, owner and crew to comply with the rules.</h3>
+
+                <p style="margin-top: 20px;">(a) Nothing in these Rules shall exonerate any vessel, or the owner, master or crew thereof, from the consequences of any neglect to comply with these Rules or of the neglect of any precaution which may be required by the ordinary practice of seamen, or by the special circumstances of the case.</p>
+
+                <p style="margin-top: 20px;">(b) In construing and complying with these Rules due regard shall be had to all dangers of navigation and collision and to any special circumstances, including the limitations of the vessels involved, which may make a departure from these Rules necessary to avoid immediate danger.</p>
+            </div>
+                        <!--===================DEFINITIONS====================-->
+                        <div class="content">
+                <h2>Definitions</h2>
+                <h3 style="color: black;"><b>Rules 3</b> - includes definitions.</h3>
+
+                <style>
+                    p.rule-definition {
+                      margin-top: 20px;
+                    }
+                    .defined-term {
+                      font-weight: bold;
+                      color: #0066cc;
+                    }
+                  </style>
+                  
+                  <p class="rule-definition">For the purpose of these Rules, except where the context otherwise requires:</p>
+                  <button popovertarget="wig-craft" ><b></b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button>
+                  
+                  <p class="rule-definition">(a) The word '<span class="defined-term">vessel</span>' includes every description of water craft, including <button popovertarget="craft" ><b>non-displacement craft</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button>, 
+                    <button popovertarget="wig-craft" ><b>WIG craft</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> and <button popovertarget="seaplanes" ><b>seaplanes</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button>, used or capable of being used as a means of transportation on water.</p>
+                  
+                  <p class="rule-definition">(b) The term '<span class="defined-term">power-driven vessel</span>' means any vessel propelled by machinery.</p>
+                  
+                  <p class="rule-definition">(c) The term '<span class="defined-term">sailing vessel</span>' means any vessel <button popovertarget="under-sail" ><b>under sail</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> provided that propelling machinery, if fitted, is not being used.</p>
+                  
+                  <p class="rule-definition">(d) The term '<span class="defined-term">vessel engaged in fishing</span>' means any vessel fishing with 
+                    <button popovertarget="nets" ><b>nets</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button>, <button popovertarget="lines" ><b>lines</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button>, <button popovertarget="trawls" ><b>trawls</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> or other fishing apparatus which restrict manoeuvrability, but does not include a vessel fishing with <button popovertarget="trolling-lines" ><b>trolling lines</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> or other fishing apparatus which do not restrict manoeuvrability.</p>
+                  
+                  <p class="rule-definition">(e) The word '<span class="defined-term">seaplane</span>' includes any aircraft designed to manoeuvre on the water.</p>
+                  
+                  <p class="rule-definition">(f) The term '<span class="defined-term">vessel not under command</span>' means a vessel which through some exceptional circumstance is unable to manoeuvre as required by these Rules and is therefore unable to keep out of the way of another vessel.</p>
+                  
+                  <p class="rule-definition">(g) The term '<span class="defined-term">vessel restricted in her ability to manoeuvre</span>' means a vessel which from the nature of her work is restricted in her ability to manoeuvre as required by these Rules and therefore is unable to <button popovertarget="keep-out-the-way" ><b>keep out of the way</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> of another vessel. The term '<span class="defined-term">vessels restricted in their ability to manoeuvre</span>' shall include but not be limited to:<br>
+                    <div style="padding: 20px;">
+                        (i) a vessel engaged in laying, servicing or picking up a navigation mark, submarine cable or pipeline;<br>
+                        (ii) a vessel engaged in dredging, surveying or underwater operations;<br>
+                        (iii) a vessel engaged in replenishment or transferring persons, provisions or cargo while underway;<br>
+                        (iv) a vessel engaged in the launching or recovery of aircraft;<br>
+                        (v) a vessel engaged in mineclearance operations;<br>
+                        (vi) a vessel engaged in a towing operation such as severely restricts the towing vessel and her tow in their ability to deviate from their course.</p>      
+                    </div>
+                  <p class="rule-definition">(h) The term '<span class="defined-term">vessel constrained by her draught</span>' means a power-driven vessel which because of her draught in relation to the available depth and width of navigable water, is severely restricted in her ability to deviate from the course she is following.</p>
+                  
+                  <p class="rule-definition">(i) The word '<span class="defined-term">underway</span>' means that a vessel is not at anchor, or <button popovertarget="made-fast" ><b>made fast</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> to the shore, or aground.</p>
+                  
+                  <p class="rule-definition">(j) The words '<span class="defined-term">length</span>' and '<span class="defined-term">breadth</span>' of a vessel mean her length overall and greatest breadth.</p>
+                  
+                  <p class="rule-definition">(k) Vessels shall be deemed to be in sight of one another only when one can be observed visually from the other.</p>
+                  
+                  <p class="rule-definition">(l) The term '<span class="defined-term">restricted visibility</span>' means any condition in which visibility is restricted by fog, mist, falling snow, heavy rainstorms, sandstorms or any other similar causes.</p>
+                  
+                  <p class="rule-definition">(m) The term '<span class="defined-term">Wing-In-Ground (WIG) craft</span>' means a multimodal craft which, in its main operational mode, flies in close proximity to the surface by utilizing surface-effect action.</p>
+
+            </div>
+                        <!--===================Lights & shapes====================-->
+                        <!--===================Basic Lights====================-->
+                        <div class="content">
+                            <h2>Basic Lights Configurations</h2>
+                            <h3 style="color: black;"><b>Rule 1</b> - states that the rules apply to all vessels upon the high seas and all waters connected to the high seas and navigable by seagoing vessels.</h3>
+            
+                        </div>
+        </div>
+
+
+
+    </main>
+    <!--POPOVER-->
+        <!--N.B-->
+        <div popover id="n-b" class="popover">
+            <h3><i class="fas fa-sticky-note"></i> N.B</h3>
+            <h5 style="margin-top: 20px;"><b>Sidebar Content:</b></h5>
+            <p>
+                Click the '<span style="color: rgb(163, 17, 17);">Content</span>' button in the navigation bar to open the sidebar (which lists all available content)
+            </p>
+            <h5 style="margin-top: 20px;"><b>Word Clarifications:</b></h5>
+            <p>Click any bold word (marked with the <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i>) to view its definition or additional notes.</p>
+        </div>
+    <!--Non-displacement craft-->
+    <div popover id="craft" class="popover">
+        <h3>Non-displacement craft</h3>
+        <img src="images/vessel/craft.jfif" alt="">
+        <p>
+            A non-displacement craft is a type of boat or ship that does not push water aside (displace it) as it moves. Instead, it rides on top of the water at high speeds, often supported by lift (like hydrofoils, hovercraft, or planing hulls).
+        </p>
+    </div>
+        <!--wig craft-->
+        <div popover id="wig-craft" class="popover">
+            <h3>WIG craft</h3>
+            <img src="images/vessel/wig.jfif" alt="">
+            <p>
+                A WIG craft (Wing-in-Ground-effect craft) is a high-speed vehicle that flies just above water or flat land using ground effect (the aerodynamic lift created by air trapped between its wings and the surface).            </p>
+        </div>
+        <!--Seaplane-->
+        <div popover id="seaplanes" class="popover">
+            <h3>Seaplane</h3>
+            <img src="images/vessel/seaplane.jpg" alt="">
+            <p>
+                A seaplane is an aircraft designed to take off from and land on water, using floats or a boat-like hull instead of wheels.
+            </p>
+        </div>
+        <!--Under sail-->
+        <div popover id="under-sail" class="popover">
+            <h3>Vessel under sail</h3>
+            <p>
+                A vessel under sail is any boat or ship that is propelled primarily by wind using sails, rather than by engines or oars.
+            </p>
+        </div>
+        <!--Nets-->
+        <div popover id="nets" class="popover">
+            <h3>Fishing with Nets</h3>
+            <img src="images/vessel/nets.jfif" alt="">
+            <p>Using mesh nets to trap fish.</p>
+        </div>
+        <!--trawls-->
+        <div popover id="trawls" class="popover">
+            <h3>Trawls (Trawl Fishing)</h3>
+            <img src="images/vessel/trawl.jpg" alt="">
+            <p>
+                Dragging a large net (trawl net) along the seafloor/midwater.
+            </p>
+        </div>
+        <!--Fishing with Lines-->
+        <div popover id="lines" class="popover">
+            <h3>Fishing with Lines</h3>
+            <img src="images/vessel/lines.jpg" alt="">
+            <p>
+                Using hooks on lines (handheld or mechanized).
+            </p>
+        </div>
+        <!--trolling lines-->
+        <div popover id="trolling-lines" class="popover">
+            <h3>Trolling lines</h3>
+            <img src="images/vessel/trolling.jpg" alt="">
+            <p>Dragging baited lines behind a moving boat.</p>
+        </div>
+                <!--Keep out the way-->
+        <div popover id="keep-out-the-way" class="popover">
+            <h3>Keep out the way</h3>
+            <p>
+                A vessel required to take early, clear action to avoid collision with another vessel (under COLREGs/International Regulations for Preventing Collisions at Sea).
+            </p>
+        </div>
+        <!--Made fast-->
+        <div popover id="made-fast" class="popover">
+            <h3>Made fast</h3>
+            <p>
+                Securing a line (rope), anchor, or cargo so it cannot move.
+            </p>
+        </div>
+
+
+    <footer style="background-color: #f8f9fa; padding: 15px 20px; text-align: center; font-size: 14px; color: #6c757d; border-top: 1px solid #e9ecef;">
+        <p>
+            <a href="www.linkedin.com/in/wahiba-adidi-b70a55255" style="color: #007bff; text-decoration: none;">LinkedIn</a> |
+            <a href="https://github.com/howa9999-coder" style="color: #007bff; text-decoration: none;">GitHub</a> 
+        </p>
+        <a href="#top" style="color: #007bff; text-decoration: none;">Back to top</a>
+        <p>&copy; 2025. All Rights Reserved. | <span style="font-style: italic; color: #888;">Rahmany</span></p>
+    </footer>
+    <script src="js/colreg.js"></script>
+</body>
+</html>
