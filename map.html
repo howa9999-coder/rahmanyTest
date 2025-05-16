@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Aref+Ruqaa:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="js/leaflet-mesure.js"></script>
+    <link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css">
+    <script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+    <script src="https://unpkg.com/@turf/turf@7.1.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css">
+    <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css">
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Rahmany | Interactive map</title>
+</head>
+<body>
+    <header>
+        <div class="logo-content">
+            <h2><a style="text-decoration: none; color: black;" href="index.html"><i class="fas fa-anchor"></i> Rahmany</a></h2>
+            <button id="tools" class="classic-btn tooltip" style="font-size: 22px;"><i style="display: block; margin-bottom: 5px;" class="fas fa-columns"></i>
+                <span class="tooltiptext">Sidebar</span>
+            </button>
+
+        </div>
+        <button class="menu-btn" style="background-color: rgb(239, 237, 237); border: 1px solid black; border-radius:  10px; padding:5px 10px; " id="menuBtn"><i class="fas fa-bars"></i></button>
+
+        <div class="nav" id="navMenu">
+            <input type="color" id="color-picker" name="color" value="#007bff">
+            <button onclick="down()" class="classic-btn tooltip"><i class="fas fa-download" style="display: block; margin-bottom: 5px;"></i>
+                <span class="tooltiptext">Download drawing layer</span>
+            </button>
+            <button  popovertarget="import-container " class="tooltip" ><i class="fas fa-file-import" style="display: block; margin-bottom: 5px;"></i>
+                <span class="tooltiptext">Import Geojson layer</span>
+            </button>
+            <button onclick="home()" class="classic-btn tooltip"><i class="fas fa-globe" style="display: block; margin-bottom: 5px;"></i>
+                <span class="tooltiptext">Rest view</span>
+            </button>
+            <button onclick="fullScreenview()" class="classic-btn tooltip"><i style="display: block; margin-bottom: 5px;" class="fas fa-expand"></i>
+                <span class="tooltiptext">Full screen</span>
+            </button>
+            <button class="classic-btn tooltip"><a style="text-decoration: none; color: black; display: block; margin-bottom: 5px;" href="doc.html"><i class="fas fa-file"></i></a>
+                <span class="tooltiptext">Tooltip text</span>
+            </button>
+        </div>
+    </header>
+    <div popover id="import-container">
+        <button id="import-geojson">Import GeoJSON</button>
+                    <input class="input" type="file" id="geojson-file" style="display: none;" accept=".geojson, .json" />
+                    <button id="delete-imported-file"><i class="fa-regular fa-trash-can"></i></button>
+
+    </div>
+    <div id="feature-form" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:white;padding:20px;z-index:1000;border:2px solid #333;border-radius:5px;box-shadow:0 0 10px rgba(0,0,0,0.5);">
+        <h3 style="margin-top:0;">Feature Properties</h3>
+        <label>Name: <input type="text" id="feature-name" class="form-control"></label><br><br>
+        <label>Description: <textarea id="feature-desc" class="form-control" rows="3"></textarea></label><br><br>
+        <label>Type: 
+            <select id="feature-type" class="form-control">
+                <option value="building">Building</option>
+                <option value="road">Road</option>
+                <option value="area">Area</option>
+                <option value="other">Other</option>
+            </select>
+        </label><br><br>
+        <button id="save-feature" class="btn btn-primary">Save</button>
+        <button id="cancel-feature" class="btn btn-secondary" style="margin-left:10px;">Cancel</button>
+    </div>
+    <main>
+        <aside class="sidebar">
+            <!--Weather-->
+            <div class="container cont">
+                <div class="head">
+                    <h4>Weather</h4>
+                    <button class="btn" onclick="toggleContent(this)">+</button>
+                </div>
+                <div class="content">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" id="myCheckbox">
+                        <span class="checkmark"></span>
+                        Current Conditions
+                    </label>
+                    <div id="weather-result" style="margin-top: 20px;"></div>
+                    <div id="weather-result2" style="margin-top: 20px;"></div>
+                        <label class="custom-checkbox">
+                        <input type="checkbox" id="myDailyCheckbox">
+                        <span class="checkmark"></span>
+                        Daily Marine Variables
+                    </label>
+
+                    <div id="daily-weather-result" style="margin-top: 20px;"></div>
+
+
+                    <p class="note">
+                        <hr>
+                        Select your weather data preferences, then click any point on the map to fetch real-time information <b>—powered by Open-Meteo</b>. 
+                        <br>For advanced forecasts (wind, radar, etc.), visit <a href="https://www.windy.com/?30.543,-9.053,5,i:pressure,p:wind" target="_blank" rel="noopener">Windy.com</a>.
+                    </p>
+
+                </div>
+            </div>
+            <!--search point-->
+            <div class="container cont">
+                <div class="head">
+                    <h4>Search Point</h4>
+                    <button class="btn" onclick="toggleContent(this)">+</button>
+                </div>
+                <div class="content">
+                <input class="input" type="number" id="lat" placeholder="Lat">
+                <input class="input" type="number" id="log" placeholder="Log">
+                <button id="search-point"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+            <!--Destination point-->
+            <div class="container cont">
+                <div class="head">
+                    <h4>Destination Point</h4>
+                    <button class="btn" onclick="toggleContent(this)">+</button>
+                </div>
+                <div class="content">
+                    <input class="input" type="number" id="lat-start" placeholder="Lat">
+                    <input class="input" type="number" id="log-start" placeholder="Log">
+                    <input class="input" type="number" id="bearing" placeholder="Bearing">
+                    <input class="input" type="number" id="distance" placeholder="Distance">
+                    <select name="" id="unit">
+                        <option value="">Select Unit</option>
+                        <option value="nauticalmiles">nauticalmiles</option>
+                        <option value="kilometers">kilometers</option>
+                        <option value="miles">miles</option>
+                    </select>
+                    <div class="btns">
+                        <button id="destination-result-btn"><i class="fas fa-equals"></i></button>
+                        <button id="destination-point"><i class="fas fa-layer-group"></i></button>
+                        <button id="clear-destination-inputs"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                    <div id="destination-result" style="margin-top: 20px;"></div>
+                </div>
+            </div>
+            <!--Bearing-->
+            <div class="container cont">
+                <div class="head">
+                    <h4>Bearing</h4>
+                    <button class="btn" onclick="toggleContent(this)">+</button>
+                </div>
+                <div class="content">
+                    <input class="input" type="number" id="lat-a" placeholder="Lat A">
+                    <input class="input" type="number" id="lng-a" placeholder="Lng A">
+                    <input class="input" type="number" id="lat-b" placeholder="Lat B">
+                    <input class="input" type="number" id="lng-b" placeholder="Lng B">
+                    <div class="btns">
+                        <button id="bearing-result-btn"><i class="fas fa-equals"></i></button>
+                        <button id="bearing" onclick="bearing()"><i class="fas fa-layer-group"></i></button>
+                        <button id="clear-bearing-inputs" onclick="removeBearing()"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                    <div id="bearing-result" style="margin-top: 20px;"></div>
+
+                </div>
+            </div>
+            <!--Distance-->
+            <div class="container cont">
+                <div class="head">
+                    <h4>Distance</h4>
+                    <button class="btn" onclick="toggleContent(this)">+</button>
+                </div>
+                <div class="content">
+                    <input class="input" type="number" id="lat-a-distance" placeholder="Lat A">
+                    <input class="input" type="number" id="lng-a-distance" placeholder="Lng A">
+                    <input class="input" type="number" id="lat-b-distance" placeholder="Lat B">
+                    <input class="input" type="number" id="lng-b-distance" placeholder="Lng B">
+                    <select name="" id="unit-distance">
+                        <option value="">Select Unit</option>
+                        <option value="nauticalmiles">nauticalmiles</option>
+                        <option value="kilometers">kilometers</option>
+                        <option value="miles">miles</option>
+                    </select>
+                    <div class="btns">
+                        <button id="distance-result-btn"><i class="fas fa-equals"></i></button>
+                        <button onclick="distance()"><i class="fas fa-layer-group"></i></button>
+                        <button id="clear-bearing-inputs" onclick="removeDistance()"><i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                    <div id="distance-result" style="margin-top: 20px;"></div>
+                </div>
+            </div>
+            <!--Search data-->
+            <div class="container cont">
+                <div class="head">
+                    <h4>Search Data</h4>
+                    <button class="btn" onclick="toggleContent(this)">+</button>
+                </div>
+                <div class="content">
+                    <select name="" id="select-layer">
+                        <option value="">Select Layer</option>
+                    </select>
+                    <input class="input" type="text" placeholder="Search" id="search">
+                    <button id="clear-result"><i class="fa-regular fa-trash-can"></i></button>
+                    <div id="result"></div>
+                </div>
+            </div>
+            <!--Download-->
+            <div class="container cont">
+                <div class="head">
+                    <h4>Download Geojson Layer</h4>
+                    <button class="btn" onclick="toggleContent(this)">+</button>
+                </div>
+                <div class="content"></div>
+            </div>
+            <!--import layer
+                       <div class="container cont">
+                <div class="head">
+                    <h4>Import Geojson Layer</h4>
+                    <button class="btn" onclick="toggleContent(this)">+</button>
+                </div>
+                <div class="content">
+                    <button id="import-geojson">Import GeoJSON</button>
+                    <input class="input" type="file" id="geojson-file" style="display: none;" accept=".geojson, .json" />
+                    <button id="delete-imported-file"><i class="fa-regular fa-trash-can"></i></button>
+
+                </div>
+            </div>-->
+ 
+        </aside>
+        <div id="map">        <div id="coordinates"></div>
+    </div>
+    </main>
+    <script src="js/tools.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/weather.js"></script>
+</body>
+</html>

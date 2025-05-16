@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Aref+Ruqaa:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!--font awsome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Rahmany</title>
+
+</head>
+<body >
+    <header id="top" style="margin-bottom: 30px;">
+        <a onclick="btnFunction('.contact', '.head-btn-contact')" href="#contact" style="font-family: 'IBM Plex Sans Arabic', sans-serif; margin-bottom: 20px;  color:  #007bff; text-decoration: none; ">Get In Touch</a>
+    </header>
+    <main  >
+        <!--Info-->
+        <div  >
+
+            <h1><a style="text-decoration: none; color: black;" href="index.html"><i class="fas fa-anchor"></i> Rahmany,</a> Charting Knowledge, Steering Futures.
+            </h1>
+
+
+            <div style="margin-bottom: 30px;">
+                <p class="intro">
+                    To democratize maritime education by providing free, interactive learning tools. We simplify navigation laws, sailing rules, and formulas for students worldwide. Our platform bridges theory and practice with real-time maps and calculators. Together, we’re building a safer, smarter generation of navigators.
+                </p>
+
+                <a href="map.html" style="font-family: 'IBM Plex Sans Arabic', sans-serif;  color: #007bff; text-decoration: none; ">Interactive Map</a>
+
+            </div>
+            </div>
+        <!--INTERCATIVE MAP-->
+        <div class="container cont" id="map">
+            <div class="head">
+            <h2>Interactive Map</h2>
+            <button class="btn" onclick="toggleContent(this)">+</button>
+            </div>
+
+            <div class="content " >
+                <p>
+                    Rahmany’s living atlas transforms navigation training into an immersive experience. Layer real-time maritime law zones (EEZs, PSSAs), plot routes with drag-and-drop waypoints, and calculate bearings/distances with geodesic precision—all on a dynamic, ECDIS-style chart. Designed for both students and professionals, it bridges classroom theory and on-deck practice.
+                </p>
+                <div class="links">
+                    <a href="map.html" style="font-family: 'IBM Plex Sans Arabic', sans-serif; color: #007bff; text-decoration: none; ">Interactive Map</a>
+                </div>
+                <h4>Key Tools:</h4>
+                <div class="icons">
+                    <div>
+                        Legal boundary toggles (SOLAS, MARPOL zones)                                </div>
+                    <div>
+                        Route simulation with tidal/current overlays
+                    </div>
+                    <div>
+                        Exportable Geojson files for voyage planning                                </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Skill up-->
+                <div class="container cont" >
+                    <div class="head">
+                    <h2>Skill UP</h2>
+                    <button class="btn head-btn-projects" onclick="toggleContent(this)">+</button>
+                    </div>
+        
+                    <div class="content projects " >
+                        <!--skill 2-->
+                        <div class="project">
+                            <h3>1.Steering & Sailing Rules (COLREGs)
+                                <a href="colreg.html" class="demo"><i class="fas fa-external-link-alt"></i> </a></h3>
+                            <p>
+                                Master right-of-way like a seasoned captain. Rahmany’s rulebook breaks down COLREGs into interactive scenarios—animate crossing situations, sound signal quizzes, and fog navigation drills. Our ‘Rule Engine’ auto-flags violations in user-plotted routes.                            <div class="icons">
+                                <div>
+                                    Animated GIFs/Videos of Rule 5–19 applications                                
+                                </div>
+                                <div>
+                                    Mnemonics for light/shape recognition
+                                </div>
+                            </div>
+                        </div>
+                        <!--Skill 4-->
+                        <div class="project">
+                            <h3>2.NavFormulas: Loxo & Ortho Essentials  <a href="https://howa9999-coder.github.io/oowsafaa/" class="demo"><i class="fas fa-external-link-alt"></i> </a></h3>
+                            <p>
+                                Master the two core paths of marine navigation—straight-line loxodromes (constant bearing) and curve-minimizing orthodromes (great circles)—with Rahmany’s step-by-step solvers. Learn to calculate distances, intermediate points, and course angles using spherical trigonometry or simplified Mercator approximations, tailored for cadets and coastal navigators.                            </p>                           
+                            <div class="icons">
+                                <div>
+                                    Basic Coordinate Math
+                                </div>
+                                <div>
+                                    Trig-free coastal navigation shortcuts
+                                </div>
+                                <div>
+                                    Solve for constant-bearing routes with Mercator projection formulas
+                                </div>
+                                <div>
+                                    Haversine formula for shortest-path distance
+                                </div>
+                                <div>
+                                    Waypoint generator (every 5° along the arc)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <!--Cantact-->
+        <div class="container cont" id="contact">
+            <div class="head">
+            <h2>Share Your Thoughts</h2>
+            </div>
+
+            <div class="content contact" >
+                <p class="thanks">
+                    Your feedback helps us improve Rahmany! Whether you have suggestions, notes,  
+                    or just want to share ideas, we’d love to hear from you. Fill out the form  
+                    below, and we’ll get back to you soon. 
+                </p>
+
+                <form action="https://formsubmit.co/wahibaadidi1@gmail.com" method="POST">
+                    <div class="input-field">
+                        <input type="text" name="name" required spellcheck="false">
+                        <label for="">Name</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="email" required spellcheck="false">
+                        <label for="">Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="subject" required spellcheck="false">
+                        <label for="">Subject</label>
+                    </div>
+                    <div class="input-field">
+                        <textarea  name="message" required placeholder="Message ..."></textarea>
+                    </div>
+                    <button type="submit">Send</button>
+               </form>
+
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+    <footer style="background-color: #f8f9fa; padding: 15px 20px; text-align: center; font-size: 14px; color: #6c757d; border-top: 1px solid #e9ecef;">
+        <p>
+            <a href="www.linkedin.com/in/wahiba-adidi-b70a55255" style="color: #007bff; text-decoration: none;">LinkedIn</a> |
+            <a href="https://github.com/howa9999-coder" style="color: #007bff; text-decoration: none;">GitHub</a> 
+        </p>
+        <a href="#top" style="color: #007bff; text-decoration: none;">Back to top</a>
+        <p>&copy; 2025. All Rights Reserved. | <span style="font-style: italic; color: #888;">Rahmany</span></p>
+    </footer>
+    
+    <script src="main.js"></script>
+</body>
+</html>                                                                                                                                                                                                                                                                                                              t-path distance
+                                </div>
+                                <div>
+                                    Waypoint generator (every 5° along the arc)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <!--Cantact-->
+        <div class="container cont" id="contact">
+            <div class="head">
+            <h2>Share Your Thoughts</h2>
+            </div>
+
+            <div class="content contact" >
+                <p class="thanks">
+                    Your feedback helps us improve Rahmany! Whether you have suggestions, notes,  
+                    or just want to share ideas, we’d love to hear from you. Fill out the form  
+                    below, and we’ll get back to you soon. 
+                </p>
+
+                <form action="https://formsubmit.co/wahibaadidi1@gmail.com" method="POST">
+                    <div class="input-field">
+                        <input type="text" name="name" required spellcheck="false">
+                        <label for="">Name</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="email" required spellcheck="false">
+                        <label for="">Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="subject" required spellcheck="false">
+                        <label for="">Subject</label>
+                    </div>
+                    <div class="input-field">
+                        <textarea  name="message" required placeholder="Message ..."></textarea>
+                    </div>
+                    <button type="submit">Send</button>
+               </form>
+
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+    <footer style="background-color: #f8f9fa; padding: 15px 20px; text-align: center; font-size: 14px; color: #6c757d; border-top: 1px solid #e9ecef;">
+        <p>
+            <a href="www.linkedin.com/in/wahiba-adidi-b70a55255" style="color: #007bff; text-decoration: none;">LinkedIn</a> |
+            <a href="https://github.com/howa9999-coder" style="color: #007bff; text-decoration: none;">GitHub</a> 
+        </p>
+        <a href="#top" style="color: #007bff; text-decoration: none;">Back to top</a>
+        <p>&copy; 2025. All Rights Reserved. | <span style="font-style: italic; color: #888;">Rahmany</span></p>
+    </footer>
+    
+    <script src="main.js"></script>
+</body>
+</html>
