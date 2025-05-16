@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Aref+Ruqaa:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/colreg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Rahmany | Colreg</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo-content">
+            <h2><a style="text-decoration: none; color: black;" href="index.html"><i class="fas fa-anchor"></i> Rahmany</a></h2>
+            <button id="tools" class="classic-btn sidebar-btn remove" style="font-size: 22px;"><i class="fas fa-columns"></i></button>
+        </div>
+
+        <button class="menu-btn" style="background-color: rgb(239, 237, 237); border: 1px solid black; border-radius:  10px; padding:5px 10px; " id="menuBtn"><i class="fas fa-bars"></i></button>
+        <div class="nav" id="navMenu">
+            <!--
+                        <button class="classic-btn sidebar-btn remove">Content</button>
+
+            -->
+            <button class="classic-btn"><a style="text-decoration: none; color: black;" href="index.html">Home</a></button>
+            <button class="classic-btn"><a style="text-decoration: none; color: black;" href="map.html">Interactive Map</a></button>
+            <button class="classic-btn"><a style="text-decoration: none; color: black;" href="formulas.html">NavFormulas</a></button>
+            <button class="classic-btn"><a style="text-decoration: none; color: black;" href="unclos.html">UNCLOS</a></button>
+            <button class="classic-btn"><a style="text-decoration: none; color: black;" href="marpol.html">Marpol</a></button>
+            <button class="classic-btn" popovertarget="n-b"><i class="fas fa-sticky-note" style="color: #4169E1;"></i></button>
+            <button onclick="fullScreenview()" class="classic-btn"><i class="fas fa-expand"></i></button>
+        </div>
+    </header>
+    <main class="container">
+        <aside class="sidebar tab-box">
+            <div class="btns">
+                <h4>COLREGs</h4>
+                <button class="tab-btn intro-btn">Introduction</button>
+                <h4>General</h4>
+                <button class="tab-btn">Rule 1 - Application</button>
+                <button class="tab-btn">Rule 2 - Responsability</button>
+                <button class="tab-btn">Rule 3 - Definitions</button>
+                <h4>PART B - STEERING AND SAILING RULES</h4>
+                <h5 style="padding: 5px;">SECTION I CONDUCT OF VESSELS IN ANY CONDITION OF VISIBILITY</h5>
+                <button class="tab-btn">Rule 4 - Application</button>
+                <button class="tab-btn">Rule 5 - Look-out</button>
+                <button class="tab-btn">Rule 6 - Safe Speed</button>
+                <button class="tab-btn">Rule 7 - Risk of Collision</button>
+                <button class="tab-btn">Rule 8 - Action to avoid Collision</button>
+                <button class="tab-btn">Rule 9 - Narrow Channels</button>
+                <button class="tab-btn">Rule 10 - Traffic Separation Schemes</button>
+
+                <h5 style="padding: 5px;">SECTION II CONDUCT OF VESSELS IN SIGHT OF ONE ANOTHER</h5>
+                <button class="tab-btn">Rule 11 - Application</button>
+                <button class="tab-btn">Rule 12 - Sailing Vessels</button>
+                <button class="tab-btn">Rule 13 - Overtaking</button>
+                <button class="tab-btn">Rule 14 - Head-on Situation</button>
+                <button class="tab-btn">Rule 15 - Crossing Situation</button>
+                <button class="tab-btn">Rule 16 - Action by Give-way Vessel</button>
+                <button class="tab-btn">Rule 17 - Action by Stand-on Vessel</button>
+                <button class="tab-btn">Rule 18 - Responsibilities between Vessels</button>
+
+                <h5 style="padding: 5px;">Section III-Conduct of Vessels in Restricted Visibility</h5>
+                <button class="tab-btn">Rule 19 - Conduct of Vessels in Restricted Visibility</button>
+                <h4>PART C-LIGHTS AND SHAPES</h4>
+                <button class="tab-btn">Rule 20 -  Application</button>
+                <button class="tab-btn">Rule 21 - Definitions</button>
+                <button class="tab-btn">Rule 22 - Visibility of Lights</button>
+                <button class="tab-btn">Rule 23 - Power-driven Vessels underway </button>
+                <button class="tab-btn">Rule 24 - Towing and Pushing</button>
+                <button class="tab-btn">Rule 25 - Sailing Vessels underway and Vessels under Oars</button>
+                <button class="tab-btn">Rule 26 - Fishing Vessels</button>
+                <button class="tab-btn">Rule 27 - Vessels not under Command or Restricted in their Ability to Manoeuvre</button>
+                <button class="tab-btn">Rule 28 - Vessel constrained by their draught </button>
+                <button class="tab-btn">Rule 29 - Pilot Vessels   </button>
+                <button class="tab-btn">Rule 30 - Anchored Vessels and Vessels aground</button>
+                <button class="tab-btn">Rule 31 - Seaplanes   </button>
+
+                
+
+              </div>
+        </aside>
+
+        <div class="content-box">  <!--Start-->
+            <!--===================COLREG INTRODUCTION====================-->
+            <div class="content intro">
+                <h2>Introduction to the International Regulations for Preventing Collisions at Sea (COLREGs)</h2>
+                <p>
+                    The International Regulations for Preventing Collisions at Sea (COLREGs) are the globally recognized rules governing maritime navigation to ensure safety and prevent collisions between vessels. Established by the International Maritime Organization (IMO) and first adopted in 1972, these regulations provide standardized procedures for:
+                </p>
+                <ul>
+                    <li><b>Steering and Sailing Rules</b> (Right-of-way, overtaking, crossing, and head-on situations)</li>
+                    <li><b>Lights and Shapes</b> (Visual signals for day and night)</li>
+                    <li><b>Sound and Light Signals</b> (Fog signals, maneuvering warnings)</li>
+                    <li><b>Responsibilities of Vessels</b> (Based on type, size, and operational status)</li>
+                    <li><b></b></li>
+                </ul>
+
+                <h3>Why Are COLREGs Important?</h3>
+                <ul>
+                    <li><b>Universal Standardization</b> – Ensures all mariners follow the same rules, reducing confusion.</li>
+                    <li><b>Collision Prevention</b> – Clear guidelines for navigation in all conditions (good visibility, restricted visibility, and emergencies).</li>
+                    <li><b>Legal Framework</b> – Used in accident investigations to determine fault and liability.</li>
+                </ul>
+
+                <h3>The COLREGs include 41 rules divided into six sections:</h3>
+                <h4>Part A - General (Rules 1-3)</h4>
+                <h4>Part B - Steering and sailing (Rules 4-19)</h4>
+                <h4>Part C - Lights and shapes (Rules 20-31)</h4>
+                <h4>Part D - Sound and light signals (Rules 32-37)</h4>
+                <h4>Part E - Exemptions</h4>
+                <h4>Part F - Verification of compliance with the provisions of the Convention (Rules 39-41)</h4>
+
+                <h3>The COLREGs include four annexes:</h3>
+                <ul>
+                    <li>Annex I - Positioning and technical details of lights and shapes</li>
+                    <li>Annex II - Additional signals for fishing vessels fishing in close proximity</li>
+                    <li>Annex III - Technical details of sounds signal appliances</li>
+                    <li>Annex IV - Distress signals, which lists the signals indicating distress and need of assistance.</li>
+
+                </ul>
+            </div>
+
+            <!--===================Part A - General (Rules 1-3)====================-->
+                                   <!--===================Rule 1====================-->
+            <div class="content">
+                <h2>Rule 1 - Application</h2>
+                <ol type="a">
+                  <li>These Rules shall apply to all vessels upon the high seas and in all waters connected therewith navigable by seagoing vessels.</li>
+                  <li>Nothing in these Rules shall interfere with the operation of special rules made by an appropriate authority for roadsteads, harbours, rivers, lakes or inland waterways connected with the high seas and navigable by seagoing vessels. Such special rules shall conform as closely as possible to these Rules.</li>
+                  <li>Nothing in these Rules shall interfere with the operation of any special rules made by the Government of any State with respect to additional station or signal lights, shapes or whistle signals for ships of war and vessels proceeding under convoy, or with respect to additional station or signal lights or shapes for fishing vessels engaged in fishing as a fleet. These additional station or signal lights, shapes or whistle signals shall, so far as possible, be such that they cannot be mistaken for any light, shapes or signal authorized elsewhere under these Rules.</li>
+                  <li>Traffic separation schemes may be adopted by the Organization for the purpose of these Rules.</li>
+                  <li>Whenever the Government concerned shall have determined that a vessel of special construction or purpose cannot comply fully with the provisions of any of these Rules with respect to the number, position, range or arc of visibility of lights or shapes, as well as to the disposition and characteristics of sound-signalling appliances, such vessel shall comply with such other provisions in regard to the number, position, range or arc of visibility of lights or shapes, as well as to the disposition and characteristics of sound-signalling appliances, as her Government shall have determined to be the closest possible compliance with these Rules in respect to that vessel.</li>
+
+                </ol>
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                  <p class="brief"><b>Rule 1</b> - states that the rules apply to all vessels upon the high seas and all waters connected to the high seas and navigable by seagoing vessels.</p>
+                </div>
+            </div>
+                                   <!--===================Rule 2====================-->
+            <div class="content">
+                <h2>Rule 2 - Responsability</h2>
+                <ol type="a">
+                  <li>
+                    Nothing in these Rules shall exonerate any vessel, or the owner, master or crew thereof, from the consequences of any neglect to comply with these Rules or of the neglect of any precaution which may be required by the ordinary practice of seamen, or by the special circumstances of the case.
+                  </li>
+                  <li>
+                    In construing and complying with these Rules due regard shall be had to all dangers of navigation and collision and to any special circumstances, including the limitations of the vessels involved, which may make a departure from these Rules necessary to avoid immediate danger.
+                  </li>
+                </ol>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                  <p class="brief"><b>Rule 2</b> - covers the responsibility of the master, owner and crew to comply with the rules.</p>
+                </div>
+            </div>
+                                  <!--===================Rule 3====================-->
+            <div class="content">
+                <h2>Rule 3 - Application</h2>
+                  <p class="rule-definition">For the purpose of these Rules, except where the context otherwise requires:</p>
+                  <button popovertarget="wig-craft" ><b></b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button>
+                  <ol type="a">
+                    <li>
+                      The word '<span class="defined-term">vessel</span>' includes every description of water craft, including <button popovertarget="craft" ><b>non-displacement craft</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button>, 
+                    <button popovertarget="wig-craft" ><b>WIG craft</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> and <button popovertarget="seaplanes" ><b>seaplanes</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button>, used or capable of being used as a means of transportation on water.
+                    </li>
+                    <li>
+                      The term '<span class="defined-term">power-driven vessel</span>' means any vessel propelled by machinery.
+                    </li>
+                    <li>
+                       The term '<span class="defined-term">sailing vessel</span>' means any vessel <button popovertarget="under-sail" ><b>under sail</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> provided that propelling machinery, if fitted, is not being used.
+                    </li>
+                    <li>
+                      The term '<span class="defined-term">vessel engaged in fishing</span>' means any vessel fishing with 
+                    <button popovertarget="nets" ><b>nets</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button>, <button popovertarget="lines" ><b>lines</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button>, <button popovertarget="trawls" ><b>trawls</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> or other fishing apparatus which restrict manoeuvrability, but does not include a vessel fishing with <button popovertarget="trolling-lines" ><b>trolling lines</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> or other fishing apparatus which do not restrict manoeuvrability.
+                    </li>
+                    <li>
+                      The word '<span class="defined-term">seaplane</span>' includes any aircraft designed to manoeuvre on the water.
+                    </li>
+                    <li>
+                      The term '<span class="defined-term">vessel not under command</span>' means a vessel which through some exceptional circumstance is unable to manoeuvre as required by these Rules and is therefore unable to keep out of the way of another vessel.
+                    </li>
+                    <li>
+                      The term '<span class="defined-term">vessel restricted in her ability to manoeuvre</span>' means a vessel which from the nature of her work is restricted in her ability to manoeuvre as required by these Rules and therefore is unable to <button popovertarget="keep-out-the-way" ><b>keep out of the way</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> of another vessel. <br> <br>
+                      The term '<span class="defined-term">vessels restricted in their ability to manoeuvre</span>' shall include but not be limited to:
+                      <ol type="i" class="type-i">
+                        <li>
+                            a vessel engaged in laying, servicing or picking up a navigation mark, submarine cable or pipeline;
+                        </li>
+                        <li>
+                          a vessel engaged in dredging, surveying or underwater operations;
+                        </li>
+                        <li>
+                          a vessel engaged in replenishment or transferring persons, provisions or cargo while underway;
+                        </li>
+                        <li>
+                          a vessel engaged in the launching or recovery of aircraft;
+                        </li>
+                        <li>
+                          a vessel engaged in mineclearance operations;
+                        </li>
+                        <li>
+                          a vessel engaged in a towing operation such as severely restricts the towing vessel and her tow in their ability to deviate from their course.
+                        </li>
+                      </ol>
+                    </li>
+                    <li>
+                      The term '<span class="defined-term">vessel constrained by her draught</span>' means a power-driven vessel which because of her draught in relation to the available depth and width of navigable water, is severely restricted in her ability to deviate from the course she is following.
+                    </li>
+                    <li>
+                      The word '<span class="defined-term">underway</span>' means that a vessel is not at anchor, or <button popovertarget="made-fast" ><b>made fast</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> to the shore, or aground.
+                    </li>
+                    <li>
+                      The words '<span class="defined-term">length</span>' and '<span class="defined-term">breadth</span>' of a vessel mean her length overall and greatest breadth.
+                    </li>
+                    <li>
+                      Vessels shall be deemed to be in sight of one another only when one can be observed visually from the other.
+                    </li>
+                    <li>
+                      The term '<span class="defined-term">restricted visibility</span>' means any condition in which visibility is restricted by fog, mist, falling snow, heavy rainstorms, sandstorms or any other similar causes.
+                    </li>
+                    <li>
+                      The term '<span class="defined-term">Wing-In-Ground (WIG) craft</span>' means a multimodal craft which, in its main operational mode, flies in close proximity to the surface by utilizing surface-effect action.
+                    </li>
+
+                  </ol>
+
+            </div>
+                <!--===================Part B====================-->
+                        <!--===================Section 1====================-->
+                                  <!--===================Rule 4====================-->
+            <div class="content">
+                <h2>Rule 4 - Application</h2>
+                <p><button popovertarget="rules1" ><b>Rules</b> <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i></button> in this section apply in any conditions of visibility.</p>
+            </div>
+
+                                  <!--===================Rule 5====================-->
+            <div class="content">
+                <h2>Rule 5 - Look-out</h2>
+                <p>Every vessel shall at all times maintain a proper look-out by sight and hearing as well as by all available means appropriate in the prevailing circumstances and conditions so as to make a full appraisal of the situation and or the risk of collision.</p>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                   <h3>Key Elements :</h3>
+                            <p><b>"Every vessel shall at all times maintain a proper look-out"</b></p>
+
+                            <ul>
+                            <li><b>Applies to all vessels</b> (ships, boats, sailboats, etc.) regardless of size, type, or operation.</li>
+                            <li><b>Must be maintained continuously</b> (day/night, good/bad weather, busy/open waters).</li>
+                            </ul>
+
+                            <p><b>"By sight and hearing"</b></p>
+                            <ul>
+                            <li><b>Visual observation</b> (eyes) is primary—watching for lights, shapes, vessels, obstacles.</li>
+                            <li><b>Auditory awareness</b> (ears) is crucial in fog, low visibility, or when detecting sound signals (e.g., fog horns, ship engines).</li>
+                            </ul>
+
+                            <p><b>"As well as by all available means appropriate"</b></p>
+                            <ul>
+                            <li>Use of <b>radar</b>, <b>AIS (Automatic Identification System)</b>, <b>VHF radio</b>, <b>ECDIS</b>, and other navigation tools.</li>
+                            <li>Includes <b>binoculars</b>, <b>night vision equipment</b>, and even <b>crew reports</b>.</li>
+                            </ul>
+
+                            <p><b>"In the prevailing circumstances and conditions"</b></p>
+                            <ul>
+                            <li><b>Adjust look-out intensity</b> based on:</li>
+                            <ul>
+                                <li><b>Traffic density</b> (busy shipping lanes vs. open ocean).</li>
+                                <li><b>Weather</b> (fog, rain, darkness).</li>
+                                <li><b>Vessel maneuverability</b> (large ships vs. small boats).</li>
+                                <li><b>Obstructions</b> (icebergs, debris, fishing nets).</li>
+                            </ul>
+                            </ul>
+
+                            <p><b>"To make a full appraisal of the situation and risk of collision"</b></p>
+                            <ul>
+                            <li>The look-out must be <b>effective</b>—not just passive observation.</li>
+                            <li>Must assess:</li>
+                            <ul>
+                                <li>Other vessels' <b>course</b>, <b>speed</b>, and <b>intentions</b>.</li>
+                                <li>Potential <b>collision risks</b>.</li>
+                                <li><b>Navigational hazards</b> (shallow water, floating objects).</li>
+                            </ul>
+                            </ul>
+
+                            <div class="importance-section">
+                                <h3>Why This Rule Matters</h3>
+                                <ul>
+                                  <li>Prevents collisions by ensuring early detection of risks.</li>
+                                  <li>Supports other COLREGs rules (e.g., determining right of way under Rules 12–18).</li>
+                                  <li>Legal requirement: Failure to keep a proper look-out can make a vessel liable in accidents.</li>
+                                </ul>
+                              </div>
+                            
+                              <div class="example-section">
+                                <h3>Practical Application</h3>
+                                <p>On a <strong>ship’s bridge</strong>, officers should assign dedicated look-outs in high-risk areas.</p>
+                                <p>On a <strong>sailboat</strong>, even a single crew member must scan surroundings regularly.</p>
+                                <p>In <strong>fog</strong>, reliance on radar and sound signals becomes critical.</p>
+                              </div>
+                              <div class="example-section">
+                                <h3>Consequences of Violation</h3>
+                                <p><strong>Increased collision risk</strong> (e.g., Titanic’s look-out had no binoculars).</p>
+                                <p><strong>Legal penalties</strong> if negligence is proven in an accident investigation..</p>
+                              </div>
+                </div>
+            </div>
+                                  <!--===================Rule 6====================-->
+            <div class="content">
+                <h2>Rule 6 - Safe Speed</h2>
+                <p>Every vessel shall at all times proceed at a safe speed so that she can take proper and effective action to avoid a collision and be stopped within a distance appropriate to the prevailing circumstances and conditions.</p>
+                <p>In determining a safe speed the following factors shall be among those taken into account:</p>
+                                            <div class="subsection">
+                                <h4>(a) By all vessels:</h4>
+                                <ol type="i" class="type-i">
+                                <li>the state of visibility;</li>
+                                <li>the traffic density including concentrations of fishing vessels or any other vessels;</li>
+                                <li>the manoeuvrability of the vessel with special reference to stopping distance and turning ability in the prevailing conditions;</li>
+                                <li>at night the presence of background light such as from shore lights or from backscatter of her own lights;</li>
+                                <li>the state of wind, sea and current, and the proximity of navigational hazards;</li>
+                                <li>the draught in relation to the available depth of water.</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="subsection">
+                                <h4>(b) Additionally, by vessels with operational radar:</h4>
+                                <ol type="i" class="type-i">
+                                <li>the characteristics, efficiency and limitations of the radar equipment;</li>
+                                <li>any constraints imposed by the radar range scale in use;</li>
+                                <li>the effect on radar detection of the sea state, weather and other sources of interference;</li>
+                                <li>the possibility that small vessels, ice and other floating objects may not be detected by radar at an adequate range;</li>
+                                <li>the number, location and movements of vessels detected by radar;</li>
+                                <li>the more exact assessment of the visibility that may be possible when radar is used to determine the range of vessels or other objects in the vicinity.</li>
+                                </ol>
+                            </div>
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                  <div class="rule-6-explanation">
+                                <h3>Key Principles of Rule 6</h3>
+                                <p><b>"Safe speed"</b> is not fixed—it depends on real-time conditions.</p>
+                                <p><b>"All vessels"</b> must adjust speed based on factors like visibility, traffic, and maneuverability.</p>
+                                <p><b>"Radar-equipped vessels"</b> have additional responsibilities in assessing speed.</p>
+                              
+                                <h3>Factors to Consider When Determining Safe Speed</h3>
+                                
+                                <h3>(a) For ALL Vessels</h3>
+                                <p><b>State of visibility</b></p>
+                                <p>In fog, rain, or darkness, reduce speed to allow more reaction time.</p>
+                                
+                                <p><b>Traffic density</b></p>
+                                <p>Higher traffic (e.g., shipping lanes, fishing fleets) requires slower speeds.</p>
+                                
+                                <p><b>Maneuverability of the vessel</b></p>
+                                <p>Large ships (e.g., tankers) need more distance to stop or turn.</p>
+                                <p>Small boats may stop quickly but are harder to detect.</p>
+                                
+                                <p><b>Background lighting at night</b></p>
+                                <p>Shore lights or glare can mask navigation lights of other vessels.</p>
+                                
+                                <p><b>Wind, sea state, and current</b></p>
+                                <p>Strong waves or currents reduce control, requiring slower speeds.</p>
+                                
+                                <p><b>Draft (water depth)</b></p>
+                                <p>Shallow waters increase stopping distance; grounding risk requires caution.</p>
+                              
+                                <h3>(b) Additional Factors for Vessels with Radar</h3>
+                                <p><b>Radar limitations</b></p>
+                                <p>Not all objects (e.g., small boats, ice) are detectable at long range.</p>
+                                
+                                <p><b>Radar range scale in use</b></p>
+                                <p>Short-range scans may miss distant hazards.</p>
+                                
+                                <p><b>Weather interference</b></p>
+                                <p>Rain, sea clutter, or electronic noise can obscure targets.</p>
+                                
+                                <p><b>Small objects may not be detected</b></p>
+                                <p>Wooden boats, buoys, or icebergs might appear late on radar.</p>
+                                
+                                <p><b>Number and movement of radar contacts</b></p>
+                                <p>High traffic requires slower speeds for safe navigation.</p>
+                                
+                                <p><b>Radar-assisted visibility assessment</b></p>
+                                <p>Helps estimate visibility range when visual sight is limited.</p>
+                              </div>
+
+                              <div class="importance-section">
+                                <h3>Why This Rule Matters</h3>
+                                <ul>
+                                  <li>Prevents collisions by ensuring vessels can stop or maneuver in time.</li>
+                                  <li>Compensates for blind spots (e.g., radar limitations, poor visibility).</li>
+                                  <li>Legal requirement: Ignoring safe speed can lead to liability in accidents.</li>
+                                </ul>
+                              </div>
+                            
+                              <div class="example-section">
+                                <h3>Examples of Safe Speed in Practice</h3>
+                                <p><strong>Foggy conditions</strong> Slow down even if radar shows no targets.</p>
+                                <p><strong>Busy harbor</strong> Reduce speed to avoid collisions with small boats.</p>
+                                <p><strong>Large ship in shallow water</strong> → Lower speed to prevent grounding.</p>
+                              </div>
+                </div>
+            </div>
+                                  <!--===================Rule 7====================-->
+            <div class="content">
+                <h2>Rule 7 - Risk of Collision</h2>
+                            <ol type="a">
+                                <li>Every vessel shall use <strong>all available means</strong> appropriate to the prevailing circumstances and conditions to determine if risk of collision exists. If there is any doubt such risk shall be deemed to exist.</li>
+                                
+                                <li><strong>Proper use</strong> shall be made of radar equipment if fitted and operational, including long-range scanning to obtain early warning of risk of collision and radar plotting or equivalent systematic observations of detected objects.</li>
+                                
+                                <li><strong>Assumptions</strong> shall not be made on the basis of scanty information, especially scanty radar information.</li>
+                                
+                                <li>In determining if risk of collision exists the following considerations shall be among those taken into account:
+                                  <ol type="i" class="type-i">
+                                    <li>such risk shall be deemed to exist if the compass bearing of an approaching vessel does not appreciably change;</li>
+                                    <li>such risk may sometimes exist even when an appreciable bearing change is evident, particularly when approaching a very large vessel or a tow or when approaching a vessel at close range.</li>
+                                  </ol>
+                                </li>
+                              </ol>               
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                                <h3>Key Principles of Rule 7</h3>
+                                <ul class="key-principles">
+                                  <li>Vessels must use <strong>all available means</strong> (visual, radar, AIS, etc.) to assess collision risk.</li>
+                                  <li>If in doubt, <strong>assume a risk exists</strong>—erring on the side of caution.</li>
+                                  <li><strong>Proper radar use is mandatory</strong> (if available) for early detection and tracking.</li>
+                                  <li>Never rely on incomplete data—<strong>assumptions based on limited information</strong> can be dangerous.</li>
+                                  <li><strong>Bearing changes are critical</strong> but not always conclusive (especially with large vessels or at close range).</li>
+                                </ul>
+                              
+                                <h3>Detailed Breakdown of Rule 7</h3>
+                                
+                                <div class="rule-section">
+                                  <h4>(a) Use All Available Means to Assess Risk</h4>
+                                  <blockquote>"Every vessel shall use all available means..."</blockquote>
+                                  <p>Includes:</p>
+                                  <ul>
+                                    <li><strong>Visual lookout</strong> (identifying lights, shapes, and movements).</li>
+                                    <li><strong>Radar</strong> (tracking targets, assessing speed and course).</li>
+                                    <li><strong>AIS</strong> (Automatic Identification System) (confirming vessel identity and movement).</li>
+                                    <li><strong>VHF radio communication</strong> (clarifying intentions with other ships).</li>
+                                  </ul>
+                                  <p><strong>"If there is any doubt, assume risk exists"</strong></p>
+                                  <p>Prevents complacency—better to take early action than wait for certainty.</p>
+                                </div>
+                              
+                                <div class="rule-section">
+                                  <h4>(b) Proper Use of Radar (If Fitted)</h4>
+                                  <p>Radar must be used effectively, including:</p>
+                                  <ul>
+                                    <li><strong>Long-range scanning</strong> (to detect distant hazards early).</li>
+                                    <li><strong>Radar plotting</strong> (systematic tracking to determine CPA—Closest Point of Approach).</li>
+                                    <li><strong>Equivalent methods</strong> (ARPA—Automatic Radar Plotting Aid, or electronic chart overlays).</li>
+                                  </ul>
+                                  <p>Failure to properly use radar can be considered negligence in collision cases.</p>
+                                </div>
+                              
+                                <div class="rule-section">
+                                  <h4>(c) Avoid Assumptions Based on Scanty Information</h4>
+                                  <p>Example of dangerous assumptions:</p>
+                                  <ul>
+                                    <li>Seeing only one radar echo and assuming no risk.</li>
+                                    <li>Ignoring a faint radar return that could be a small boat or iceberg.</li>
+                                    <li>Believing a vessel will alter course without confirmation.</li>
+                                  </ul>
+                                  <p>Always seek more data before deciding no risk exists.</p>
+                                </div>
+                              
+                                <div class="rule-section">
+                                  <h4>(d) Key Considerations in Determining Collision Risk</h4>
+                                  <h5>(i) Compass Bearing Steady = Risk of Collision</h5>
+                                  <p>If the compass bearing of an approaching vessel does not change significantly, a collision risk exists (even if distance is decreasing slowly).</p>
+                                  <p><strong>Why?</strong> A steady bearing with decreasing range means both vessels are on a collision course.</p>
+                                  
+                                  <h5>(ii) Exceptions Where Risk May Still Exist Despite Bearing Change</h5>
+                                  <p>When approaching <strong>very large vessels</strong> (VLCCs, container ships):</p>
+                                  <ul>
+                                    <li>A small bearing change may not be enough—their size means collision risk remains until well clear.</li>
+                                  </ul>
+                                  <p>When near a <strong>tug & tow or long vessel</strong>:</p>
+                                  <ul>
+                                    <li>The towed object may not be aligned with the tug's movement, creating hidden risks.</li>
+                                  </ul>
+                                  <p>At <strong>very close range</strong>:</p>
+                                  <ul>
+                                    <li>Even if bearing changes, evasive action may be too late.</li>
+                                  </ul>
+                                </div>
+                              
+                                <div class="importance-section">
+                                <h3>Why This Rule Matters</h3>
+                                  <ul>
+                                    <li>Prevents misjudgment by requiring thorough risk assessment.</li>
+                                    <li>Mandates technology use (radar, AIS) for better situational awareness.</li>
+                                    <li>Encourages early action—waiting for 100% certainty can be too late.</li>
+                                  </ul>
+                                </div>
+                              
+                                <div class="example-section">
+                                  <h3>Practical Example</h3>
+                                  <p><strong>Scenario:</strong> A ship sees another vessel at a steady compass bearing but assumes it will pass safely because it's far away.</p>
+                                  <p><strong>Mistake:</strong> Failing to recognize that a steady bearing = collision course.</p>
+                                  <p><strong>Correct Action:</strong> Alter course early or confirm intentions via VHF.</p>
+                                </div>                </div>
+            </div>
+                                  <!--===================Rule 8====================-->
+            <div class="content">
+                <h2>Rule 8 - Action to avoid Collision</h2>
+                 <ol class="rule-sections" type="a">
+                                <li >
+                                  <p> Any action to avoid collision shall be taken in accordance with the Rules of this Part and shall, if the circumstances of the case admit, be <strong>positive</strong>, made in <strong>ample time</strong> and with due regard to the observance of <strong>good seamanship</strong>.</p>
+                                </li>
+                                
+                                <li >
+                                  <p> Any alteration of course and/or speed to avoid collision shall, if the circumstances of the case admit, be <strong>large enough</strong> to be readily apparent to another vessel observing visually or by radar; a <strong>succession of small alterations</strong> of course and/or speed should be avoided.</p>
+                                </li>
+                                
+                                <li >
+                                  <p> If there is sufficient sea room, alteration of course alone may be the most effective action to avoid a close-quarters situation provided that it is made <strong>in good time</strong>, is <strong>substantial</strong> and does not result in another close-quarters situation.</p>
+                                </li>
+                                
+                                <li >
+                                  <p> Action taken to avoid collision with another vessel shall be such as to result in passing at a <strong>safe distance</strong>. The effectiveness of the action shall be carefully checked until the other vessel is finally past and clear.</p>
+                                </li>
+                                
+                                <li >
+                                  <p> If necessary to avoid collision or allow more to assess the situation, a vessel shall <strong>slacken her speed</strong> or take all way off by stopping or reversing her means of propulsion.</p>
+                                </li>
+                                
+                                <li >
+                                  <ol  type="i" class="type-i">
+                                    <li>
+                                      <p>A vessel which, by any of these Rules, is required not to impede the passage or safe passage of another vessel shall, when required by the circumstances of the case, take <strong>early action</strong> to allow sufficient sea room for the safe passage of the other vessel.</p>
+                                    </li>
+                                    <li>
+                                      <p>A vessel required not to impede the passage or safe passage of another vessel is <strong>not relieved</strong> of this obligation if approaching the other vessel so as to involve risk of collision and shall, when taking action, have full regard to the action which may be required by the Rules of this part.</p>
+                                    </li>
+                                    <li>
+                                      <p>A vessel the passage of which is not to be impeded remains <strong>fully obliged</strong> to comply with the rules of this part when the two vessels are approaching one another so as to involve risk of collision.</p>
+                                    </li>
+                                  </ol>
+                                </li>
+                              </ol>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                                            <section class="key-principles">
+                            <h3>Key Principles of Rule 8</h3>
+                            <ul>
+                              <li><strong>Actions must be clear, timely, and follow COLREGs.</strong></li>
+                              <li><strong>Maneuvers should be large enough to be obvious</strong> (no small, uncertain adjustments).</li>
+                              <li><strong>Course changes are preferred (if safe)</strong>, but speed reduction is sometimes necessary.</li>
+                              <li><strong>Safety margins must be maintained</strong> until the other vessel is fully clear.</li>
+                              <li><strong>Vessels must not impede others</strong> when required (e.g., ships in narrow channels).</li>
+                            </ul>
+                          </section>
+                        
+                          <section class="detailed-breakdown">
+                            <h3>Detailed Breakdown of Rule 8</h3>
+                            
+                            <article class="rule-point">
+                              <h4>(a) Positive, Early Action with Good Seamanship</h4>
+                              <blockquote>"Any action... shall be positive, made in ample time"</blockquote>
+                              <ul>
+                                <li>Avoid last-minute panic maneuvers.</li>
+                                <li><strong>Example:</strong> Turning early instead of waiting until dangerously close.</li>
+                              </ul>
+                              <p>"With due regard to good seamanship"</p>
+                              <ul>
+                                <li>Follow best navigational practices (e.g., not making sudden turns in heavy traffic).</li>
+                              </ul>
+                            </article>
+                        
+                            <article class="rule-point">
+                              <h4>(b) Large, Obvious Maneuvers (Avoid Small Adjustments)</h4>
+                              <ul>
+                                <li>Alterations must be noticeable (visually or on radar).</li>
+                                <li><strong>Good:</strong> A 30° course change or significant speed reduction.</li>
+                                <li><strong>Bad:</strong> A 5° course change that's hard to detect.</li>
+                                <li><strong>Why?</strong> Small changes confuse other vessels and delay proper avoidance.</li>
+                              </ul>
+                            </article>
+                        
+                            <article class="rule-point">
+                              <h4>(c) Altering Course Alone (If Sufficient Sea Room)</h4>
+                              <ul>
+                                <li>Preferred in open waters (avoids speed loss).</li>
+                                <li>Must be:
+                                  <ul>
+                                    <li>Early (not at the last moment).</li>
+                                    <li>Substantial (e.g., 30°-60° turn).</li>
+                                    <li>Safe (does not create a new collision risk).</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </article>
+                        
+                            <article class="rule-point">
+                              <h4>(d) Ensure Safe Passing Distance & Monitor Effectiveness</h4>
+                              <ul>
+                                <li>Do not just act—verify that the action works.</li>
+                                <li><strong>Example:</strong> After turning, check radar/AIS to confirm the other vessel is passing safely.</li>
+                                <li>Keep monitoring until the other ship is fully clear.</li>
+                              </ul>
+                            </article>
+                        
+                            <article class="rule-point">
+                              <h4>(e) Speed Reduction (When Necessary)</h4>
+                              <ul>
+                                <li>Slowing or stopping is required if:
+                                  <ul>
+                                    <li>Visibility is poor (fog, heavy rain).</li>
+                                    <li>Uncertainty exists (e.g., unsure of another vessel's intentions).</li>
+                                    <li>In close-quarters situations (to allow more reaction time).</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </article>
+                        
+                            <article class="rule-point">
+                              <h4>(f) Special Cases: "Do Not Impede" Rules</h4>
+                              <h5>(i) Early Action to Give Way</h5>
+                              <ul>
+                                <li>Some vessels (e.g., large ships in narrow channels) must not impede others.</li>
+                                <li>They must take early action (e.g., slowing down or changing course).</li>
+                              </ul>
+                        
+                              <h5>(ii) Obligation Remains Even in Risk of Collision</h5>
+                              <ul>
+                                <li>Even if a collision risk develops, the vessel that must not impede still has responsibilities.</li>
+                              </ul>
+                        
+                              <h5>(iii) "Stand-On" Vessel Must Still Follow Rules</h5>
+                              <ul>
+                                <li>A vessel with right of way must still follow COLREGs (e.g., not make dangerous last-second turns).</li>
+                              </ul>
+                            </article>
+                          </section>
+                        
+                          <section class="importance">
+                                <h3>Why This Rule Matters</h3>
+                            <ul>
+                              <li>Prevents confusion (clear maneuvers are easier for others to interpret).</li>
+                              <li>Encourages early action (reducing last-minute emergencies).</li>
+                              <li>Ensures safe passing distances (avoiding near-misses).</li>
+                            </ul>
+                          </section>
+                        
+                          <section class="practical-example">
+                            <h3>Practical Example</h3>
+                            <p><strong>Scenario:</strong> A cargo ship detects a fishing vessel on a steady bearing (collision risk).</p>
+                            <p><strong>Correct Action:</strong></p>
+                            <ul>
+                              <li>Early, clear turn (e.g., 45° to starboard).</li>
+                              <li>Check radar to confirm the fishing vessel is passing safely.</li>
+                              <li>Avoid small course changes that might not be noticed.</li>
+                            </ul>
+                          </section>
+                </div>
+            </div>
+
+                                  <!--===================Rule 9====================-->
+            <div class="content">
+                <h2>Rule 9 - Narrow Channels</h2>
+                <ol class="rule-sections" type="a">
+                                <li>
+                                  <p>A vessel proceeding along the course of a narrow channel or fairway shall keep as near to the outer limit of the channel or fairway which lies on her <strong>starboard side</strong> as is <strong>safe and practicable</strong>.</p>
+                                </li>
+                                
+                                <li>
+                                  <p>A vessel of <strong>less than 20 metres</strong> in length or a <strong>sailing vessel</strong> shall not impede the passage of a vessel which can safely navigate only within a narrow channel or fairway.</p>
+                                </li>
+                                
+                                <li>
+                                  <p>A vessel <strong>engaged in fishing</strong> shall not impede the passage of any other vessel navigating within a narrow channel or fairway.</p>
+                                </li>
+                                
+                                <li>
+                                  <p>A vessel shall not <strong>cross a narrow channel</strong> or fairway if such crossing impedes the passage of a vessel which can safely navigate only within such channel or fairway. The latter vessel may use the sound signal prescribed in Rule 34(d) if in doubt as to the intention of the crossing vessel.</p>
+                                </li>
+                                
+                                <li>
+                                  <ol type="i" class="type-i">
+                                    <li>
+                                      <p>In a narrow channel or fairway when overtaking can take place only if the vessel to be overtaken has to take action to permit safe passing, the vessel intending to overtake shall indicate her intention by sounding the appropriate signal prescribed in Rule 34(c)(i). The vessel to be overtaken shall, if in agreement, sound the appropriate signal prescribed in Rule 34(c)(ii) and take steps to permit safe passing. If in doubt she may sound the signals prescribed in Rule 34(d).</p>
+                                    </li>
+                                    <li>
+                                      <p>This Rule does not relieve the overtaking vessel of her obligation under Rule 13.</p>
+                                    </li>
+                                  </ol>
+                                </li>
+                                
+                                <li>
+                                  <p>A vessel nearing a bend or an area of a narrow channel or fairway where other vessels may be obscured by an intervening obstruction shall navigate with <strong>particular alertness and caution</strong> and shall sound the appropriate signal prescribed in Rule 34(e).</p>
+                                </li>
+                                
+                                <li>
+                                  <p>Any vessel shall, if the circumstances of the case admit, <strong>avoid anchoring</strong> in a narrow channel.</p>
+                                </li>
+                              </ol>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                   <h3>Key Principles of Rule 9</h3>
+                              <ul>
+                                <li>Stay to the <strong>starboard (right) side</strong> of the channel when proceeding along it.</li>
+                                <li>Small vessels (&lt;20m) & sailing boats must not obstruct larger vessels confined to the channel.</li>
+                                <li>Fishing vessels must not block passage of other ships in narrow channels.</li>
+                                <li>Crossing is allowed only if it does not impede traffic moving along the channel.</li>
+                                <li>Overtaking requires proper sound signals and cooperation between vessels.</li>
+                                <li>Extra caution is needed near bends or blind spots (with sound signals).</li>
+                                <li>Avoid anchoring in narrow channels unless absolutely necessary.</li>
+                              </ul>
+                              
+                              <h3>Detailed Breakdown of Rule 9</h3>
+                              
+                              <h4>(a) Keep to the Starboard Side</h4>
+                              <blockquote>"Keep as near to the outer limit on the starboard side as is safe"</blockquote>
+                              <ul>
+                                <li>Ships moving along the channel should stay right (like road traffic).</li>
+                                <li>Exception: If unsafe due to shallow water, obstructions, or other vessels.</li>
+                              </ul>
+                            
+                              <h4>(b) Small Vessels & Sailing Boats Must Not Impede</h4>
+                              <ul>
+                                <li>Vessels &lt;20m or sailboats must avoid blocking larger ships that can only navigate safely in the channel.</li>
+                                <li><strong>Example:</strong> A yacht must not loiter in the middle of a shipping lane.</li>
+                              </ul>
+                            
+                              <h4>(c) Fishing Vessels Must Not Obstruct</h4>
+                              <ul>
+                                <li>Even while fishing, they must not block the path of vessels restricted to the channel.</li>
+                                <li><strong>Example:</strong> A trawler must adjust its nets to allow a tanker to pass.</li>
+                              </ul>
+                            
+                              <h4>(d) Crossing Only If Safe (Do Not Impede Traffic)</h4>
+                              <ul>
+                                <li>A vessel crossing must not interfere with ships moving along the channel.</li>
+                                <li>If in doubt, the vessel in the channel may sound:
+                                  <ul>
+                                    <li>5 short blasts (Rule 34(d)) to warn the crossing vessel.</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            
+                              <h4>(e) Overtaking Rules</h4>
+                              <h5>(i) Proper Sound Signals Required</h5>
+                              <ul>
+                                <li>Overtaking vessel must signal intent:
+                                  <ul>
+                                    <li>2 prolonged + 2 short blasts (Rule 34(c)(i)) = "I intend to overtake you on your starboard side."</li>
+                                    <li>2 prolonged + 1 short blast = "I intend to overtake you on your port side."</li>
+                                  </ul>
+                                </li>
+                                <li>Vessel being overtaken must respond if in agreement:
+                                  <ul>
+                                    <li>1 prolonged + 1 short + 1 prolonged + 1 short blast (Rule 34(c)(ii)) = "I agree, proceed."</li>
+                                  </ul>
+                                </li>
+                                <li>If unsure, it may sound 5 short blasts (Rule 34(d)) = "I don't understand your intentions."</li>
+                              </ul>
+                            
+                              <h5>(ii) Overtaking Vessel Still Responsible</h5>
+                              <ul>
+                                <li>Even with agreement, the overtaking vessel must follow Rule 13 (Overtaking Rule) and avoid collision.</li>
+                              </ul>
+                            
+                              <h4>(f) Extra Caution Near Bends & Blind Spots</h4>
+                              <ul>
+                                <li>Approaching a bend?
+                                  <ul>
+                                    <li>Navigate slowly and carefully (other ships may be hidden).</li>
+                                    <li>Sound 1 prolonged blast (Rule 34(e)) to warn approaching vessels.</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            
+                              <h4>(g) Avoid Anchoring in Narrow Channels</h4>
+                              <ul>
+                                <li>Anchoring is discouraged unless absolutely necessary (e.g., emergency).</li>
+                                <li><strong>Why?</strong> It blocks traffic and increases collision risks.</li>
+                              </ul>
+                            
+                                <h3>Why This Rule Matters</h3>
+                              <ul>
+                                <li>Prevents congestion in restricted waters.</li>
+                                <li>Reduces collision risks by keeping traffic organized.</li>
+                                <li>Ensures larger vessels (with limited maneuverability) can pass safely.</li>
+                              </ul>
+                            
+                              <h3>Practical Example</h3>
+                              <p><strong>Scenario:</strong> A cargo ship is moving along a narrow channel when a small boat suddenly crosses its path.</p>
+                              <p><strong>Correct Action:</strong></p>
+                              <ul>
+                                <li>The cargo ship sounds 5 short blasts to warn the crossing boat.</li>
+                                <li>The small boat must yield and wait until the channel is clear.</li>
+                              </ul>
+                </div>
+            </div>
+                                  <!--===================Rule 10====================-->
+            <div class="content">
+                <h2>Rule 10 - Traffic Separation Schemes (TSS)</h2>
+                 <ol type="a">
+                              <li>This Rule Applies to traffic separation schemes adopted by the Organization and does not relieve any vessel of her obligation under any other rule.</li>
+                              
+                              <li>A vessel using a traffic separation scheme shall:
+                                <ol type="i" class="type-i">
+                                  <li>proceed in the appropriate traffic lane in the general direction of traffic flow for that lane;</li>
+                                  <li>so far as practicable keep clear of a traffic separation line or separation zone;</li>
+                                  <li>normally join or leave a traffic lane at the termination of the lane, but when joining or leaving from either side shall do so at as small an angle to the general direction of traffic flow as practicable.</li>
+                                </ol>
+                              </li>
+                              
+                              <li>A vessel shall so far as practicable avoid crossing traffic lanes, but if obliged to do so shall cross on a heading as nearly as practicable at right angles to the general direction of traffic flow.</li>
+                              
+                              <li>
+                                <ol type="i" class="type-i">
+                                  <li>A vessel shall not use an inshore traffic zone when she can safely use the appropriate traffic lane within the adjacent traffic separation scheme. However, vessels of less than 20 meters in length, sailing vessels and vessels engaged in fishing may use the inshore traffic zone.</li>
+                                  <li>Notwithstanding subparagraph (d)(i), a vessel may use an inshore traffic zone when en route to or from a port, offshore installation or structure, pilot station or any other place situated within the inshore traffic zone, or to avoid immediate danger.</li>
+                                </ol>
+                              </li>
+                              
+                              <li>A vessel, other than a crossing vessel, or a vessel joining or leaving a lane shall not normally enter a separation zone or cross a separation line except:
+                                <ol type="i"  class="type-i">
+                                  <li>in cases of emergency to avoid immediate danger;</li>
+                                  <li>to engage in fishing within a separation zone.</li>
+                                </ol>
+                              </li>
+                              
+                              <li>A vessel navigating in areas near the terminations of traffic separation schemes shall do so with particular caution.</li>
+                              
+                              <li>A vessel shall so far as practicable avoid anchoring in a traffic separation scheme or in areas near its terminations.</li>
+                              
+                              <li>A vessel not using a traffic separation scheme shall avoid it by as wide a margin as is practicable.</li>
+                              
+                              <li>A vessel engaged in fishing shall not impede the passage of any vessel following a traffic lane.</li>
+                              
+                              <li>A vessel of less than 20 meters in length or a sailing vessel shall not impede the safe passage of a power-driven vessel following a traffic lane.</li>
+                              
+                              <li>A vessel restricted in her ability to manoeuvre when engaged in an operation for the maintenance of safety of navigation in a traffic separation scheme is exempted from complying with this Rule to the extent necessary to carry out the operation.</li>
+                              
+                              <li>A vessel restricted in her ability to manoeuvre when engaged in an operation for the laying, servicing or picking up of a submarine cable, within a traffic separation scheme, is exempted from complying with this Rule to the extent necessary to carry out the operation.</li>
+                            </ol>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                  <article >
+                            <h3>Key Principles of Rule 10</h3>
+                            <ul class="key-principles">
+                              <li>Follow the traffic flow in designated lanes</li>
+                              <li>Minimize crossings of traffic lanes</li>
+                              <li>Special rules for inshore zones, fishing vessels, and small craft</li>
+                              <li>Strict prohibitions on entering separation zones</li>
+                              <li>Exemptions for vessels working on safety/maintenance operations</li>
+                            </ul>
+                          
+                            <h3>Detailed Breakdown of Rule 10</h3>
+                            
+                            <section class="rule-section">
+                              <h4>(a) Scope & Relationship to Other Rules</h4>
+                              <ul>
+                                <li>Applies only to official IMO-adopted TSS systems</li>
+                                <li>Does not override other COLREGs - all other rules still apply</li>
+                              </ul>
+                            </section>
+                          
+                            <section class="rule-section">
+                              <h4>(b) Proper Use of Traffic Lanes (3 Key Requirements)</h4>
+                              <ol type="i">
+                                <li>
+                                  <strong>Follow the general traffic flow direction</strong>
+                                  <ul>
+                                    <li>Ships must travel with the established flow in their lane</li>
+                                    <li>Example: In an eastbound lane, travel east (not west or diagonally)</li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <strong>Stay clear of separation zones/lines</strong>
+                                  <ul>
+                                    <li>Maintain safe distance from the central dividing lines/zones</li>
+                                    <li>These buffer zones prevent head-on collisions</li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <strong>Join/leave lanes properly</strong>
+                                  <ul>
+                                    <li>Preferred: At the start/end of lanes (termination points)</li>
+                                    <li>If joining mid-lane: Enter at minimal angle to traffic flow (&lt;30° ideal)</li>
+                                  </ul>
+                                </li>
+                              </ol>
+                            </section>
+                          
+                            <section class="rule-section">
+                              <h4>(c) Crossing Traffic Lanes</h4>
+                              <ul>
+                                <li>Avoid if possible - plan routes to minimize crossings</li>
+                                <li>When necessary: Cross at right angles (90°) to traffic flow</li>
+                                <li>This minimizes time spent in the danger zone</li>
+                                <li>Never cross diagonally (creates prolonged exposure)</li>
+                              </ul>
+                            </section>
+                          
+                            <section class="rule-section">
+                              <h4>(d) Inshore Traffic Zones (Special Rules)</h4>
+                              <ol type="i">
+                                <li>
+                                  <strong>Main rule: Use proper traffic lanes instead when possible</strong>
+                                  <ul>
+                                    <li>Exceptions allowed for:
+                                      <ul>
+                                        <li>Vessels &lt;20m length</li>
+                                        <li>Sailing vessels</li>
+                                        <li>Fishing vessels</li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <strong>Additional exceptions:</strong>
+                                  <ul>
+                                    <li>Vessels accessing ports/installations in the zone</li>
+                                    <li>Emergency avoidance</li>
+                                  </ul>
+                                </li>
+                              </ol>
+                            </section>
+                          
+                            <section class="rule-section">
+                              <h4>(e) Separation Zone Restrictions</h4>
+                              <ul>
+                                <li>Never enter separation zones (central buffer areas) except:
+                                  <ul>
+                                    <li>Emergency danger avoidance</li>
+                                    <li>Fishing activities (if zone allows)</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </section>
+                          
+                            <section class="rule-section">
+                              <h4>(f) Caution Near Terminations</h4>
+                              <ul>
+                                <li>Areas where lanes begin/end are high-risk conflict zones</li>
+                                <li>Requires extra vigilance and reduced speed</li>
+                              </ul>
+                            </section>
+                          
+                            <section class="rule-section">
+                              <h4>(g) Anchoring Prohibition</h4>
+                              <ul>
+                                <li>Avoid anchoring in TSS or near termination points</li>
+                                <li>Only permitted in genuine emergencies</li>
+                              </ul>
+                            </section>
+                          
+                            <section class="rule-section">
+                              <h4>(h) Vessels Not Using TSS</h4>
+                              <ul>
+                                <li>Must keep well clear of the entire scheme</li>
+                                <li>Maintain maximum practical distance</li>
+                              </ul>
+                            </section>
+                          
+                            <section class="rule-section">
+                              <h4>(i)-(j) Responsibilities of Fishing/Small Vessels</h4>
+                              <ul>
+                                <li>Fishing vessels must not block ships in traffic lanes</li>
+                                <li>Small craft (&lt;20m) & sailboats must not impede powered vessels in lanes</li>
+                              </ul>
+                            </section>
+                          
+                            <section class="rule-section">
+                              <h4>(k)-(l) Exemptions for Special Operations</h4>
+                              <ul>
+                                <li>Vessels maintaining navigation safety (e.g., buoy tenders)</li>
+                                <li>Cable layers/repair vessels
+                                  <ul>
+                                    <li>May deviate from TSS rules only as needed for their work</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </section>
+                          
+                                <h3>Why This Rule Matters</h3>
+                            <ul class="importance">
+                              <li>Prevents chaotic traffic in busy shipping areas</li>
+                              <li>Reduces head-on collisions through lane discipline</li>
+                              <li>Protects smaller vessels while ensuring commercial traffic flow</li>
+                              <li>Standardizes global practices in major shipping lanes</li>
+                            </ul>
+                          
+                            <h3>Real-World Application</h3>
+                            <div class="examples">
+                              <p><strong>Correct:</strong> A tanker maintains course in eastbound lane of Dover Strait TSS</p>
+                              <p><strong>Violation:</strong> A yacht cuts diagonally across lanes causing multiple ships to alter course</p>
+                              <p><strong>Emergency Exception:</strong> A ship enters separation zone to avoid a sudden floating container</p>
+                            </div>
+                          </article>
+                </div>
+            </div>
+                                  <!--===================Rule 11====================-->
+            <div class="content">
+                        <h2>Rule 11 - Application</h2>
+                        <p>Rules in this Section shall apply to vessels in sight of one another.</p>           
+            </div>
+                                  <!--===================Rule 12====================-->
+            <div class="content">
+                            <h2>Rule 12 - Sailing vessels</h2>
+                            <ol type="a">
+                              <li>When two sailing vessels are approaching one another, so as to involve risk of collision, one of them shall keep out of the way of the other as follows:
+                                <ol type="i" class="type-i">
+                                  <li>
+                                    when each has the wind on a different side, the vessel which has the wind on the port side shall keep out of the way of the other;
+                                  </li>
+                                  <li>
+                                    when both have the wind on the same side, the vessel which is to windward shall keep out of the way of the vessel which is to leeward;
+                                  </li>
+                                  <li>
+                                    if a vessel with the wind on the port side sees a vessel to windward and cannot determine with certainty whether the other vessel has the wind on her port or starboard side, she shall keep out of the way of the other.
+                                  </li>
+                                </ol>
+                              </li>
+                              <li>
+                                For the purposes of this Rule the windward side shall be deemed to be the side opposite to that on which the mainsail is carried or, in the case of a square-rigged vessel, the side opposite to that on which the largest fore-and-aft sail is carried.
+                              </li>
+                            </ol>
+
+                            <div class="rule-explanation">
+                              <h2>Rule Explanation:</h2>
+                              <p style="text-align: center; font-weight: 600; font-size: 18px;">Rule 12 establishes right-of-way rules when two sailing vessels risk collision. Unlike power-driven vessels, sailboats determine right-of-way based on wind direction and sail position.</p>
+                            
+                              <section class="key-principles">
+                                <h3>Key Principles of Rule 12</h3>
+                                <ul>
+                                  <li><strong>Wind direction determines who gives way</strong></li>
+                                  <li>Three scenarios govern right-of-way:
+                                    <ol>
+                                      <li>Different tack (wind on different sides) → Port tack yields to starboard tack</li>
+                                      <li>Same tack (wind on same side) → Windward boat yields to leeward boat</li>
+                                      <li>Uncertainty about wind direction → Assume you must give way</li>
+                                    </ol>
+                                  </li>
+                                  <li>"Windward" = Upwind side | "Leeward" = Downwind side</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="detailed-breakdown">
+                                <h3>Detailed Breakdown of Rule 12</h3>
+                                
+                                <article class="scenario">
+                                  <h4>1. When Sailing Vessels Are on Different Tacks</h4>
+                                  <p>"Wind on different sides" (Port vs. Starboard tack)</p>
+                                  <ul>
+                                    <li><strong>Starboard tack</strong> (wind coming over the starboard/right side) → Has right of way</li>
+                                    <li><strong>Port tack</strong> (wind coming over the port/left side) → Must keep clear</li>
+                                  </ul>
+                                  
+                                  <h5>Example Scenario:</h5>
+                                  <ul>
+                                    <li>Boat A: Sailing on starboard tack (wind from the right)</li>
+                                    <li>Boat B: Sailing on port tack (wind from the left)</li>
+                                    <li><strong>Action:</strong> Boat B must yield to Boat A</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="scenario">
+                                  <h4>2. When Sailing Vessels Are on the Same Tack</h4>
+                                  <p>"Wind on the same side" (Both on port or both on starboard tack)</p>
+                                  <ul>
+                                    <li><strong>Leeward</strong> (downwind) boat → Has right of way</li>
+                                    <li><strong>Windward</strong> (upwind) boat → Must keep clear</li>
+                                  </ul>
+                                  
+                                  <h5>Example Scenario:</h5>
+                                  <ul>
+                                    <li>Boat A & B: Both on starboard tack</li>
+                                    <li>Boat A is leeward (closer to downwind)</li>
+                                    <li>Boat B is windward (further upwind)</li>
+                                    <li><strong>Action:</strong> Boat B must yield to Boat A</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="scenario">
+                                  <h4>3. If Uncertain About the Other Vessel's Tack</h4>
+                                  <ul>
+                                    <li>If a port-tack boat sees a windward boat but can't tell its tack:</li>
+                                    <li>Assume it must give way (act defensively)</li>
+                                  </ul>
+                                  
+                                  <h5>Example Scenario:</h5>
+                                  <ul>
+                                    <li>Boat A: On port tack (must normally yield to starboard tack)</li>
+                                    <li>Boat B: Approaching from windward, but sail angle is unclear</li>
+                                    <li><strong>Action:</strong> Boat A must yield (since it can't confirm Boat B's tack)</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="definition">
+                                  <h4>Definition of Windward Side</h4>
+                                  <ul>
+                                    <li>For modern sloops (single-mast sailboats):
+                                      <ul>
+                                        <li>Windward side = Opposite the mainsail's position</li>
+                                        <li>If mainsail is on the port (left) side, the starboard (right) side is windward</li>
+                                      </ul>
+                                    </li>
+                                    <li>For square-rigged ships (e.g., tall ships):
+                                      <ul>
+                                        <li>Windward side = Opposite the largest fore-and-aft sail</li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </article>
+                              </section>
+                            
+                              <section class="importance">
+                                <h3>Why This Rule Matters</h3>
+                                <ul>
+                                  <li>Prevents collisions between sailboats by standardizing right-of-way</li>
+                                  <li>Encourages predictable maneuvers (unlike powerboats, sailboats have limited maneuverability)</li>
+                                  <li>Reflects traditional sailing practices</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="example">
+                                <h3>Real-World Example</h3>
+                                <p><strong>Racing Scenario:</strong> Two sailboats approach—one on port tack, the other on starboard tack</p>
+                                <ul>
+                                  <li>Starboard tack boat holds course</li>
+                                  <li>Port tack boat must turn downwind or tack away</li>
+                                </ul>
+                              </section>
+                            </div>
+            </div>
+                                  <!--===================Rule 13====================-->
+            <div class="content">
+                            <h2>Rule 13 - Overtaking</h2>
+                            <ol type="a">
+                              <li>
+                                Notwithstanding anything contained in the Rules of Part B, Sections I and II, any vessel overtaking any other shall keep out of the way of the vessel being overtaken.
+                              </li>
+                              <li>
+                                A vessel shall be deemed to be overtaking when coming up with another vessel from a direction more than 22.5° abaft her beam, that is, in such a position with reference to the vessel she is overtaking, that at night she would be able to see only the sternlight of that vessel but neither of her sidelights.
+                              </li>
+                              <li>
+                                When a vessel is in any doubt as to whether she is overtaking another, she shall assume that this is the case and act accordingly.
+                              </li>
+                              <li>
+                                Any subsequent alteration of the bearing between the two vessels shall not make the overtaking vessel a crossing vessel within the meaning of these Rules or relieve her of the duty of keeping clear of the overtaken vessel until she is finally past and clear.
+                              </li>
+                            </ol>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                                                <p style="text-align: center; font-weight: 600; font-size: 18px;">Rule 13 establishes right-of-way rules when one vessel overtakes another. It takes priority over all other steering/sailing rules (Rules 12-18) when an overtaking situation exists.</p>
+                            
+                              <section class="key-principles">
+                                <h3>Key Principles of Rule 13</h3>
+                                <ul>
+                                  <li>The <strong>overtaking vessel must always keep clear</strong> (regardless of wind/sail position or power-driven status).</li>
+                                  <li><strong>Definition of overtaking:</strong> Approaching from more than 22.5° behind the beam (sternlight visible, sidelights not visible at night).</li>
+                                  <li>If unsure, assume you're overtaking and yield.</li>
+                                  <li>Overtaking responsibility continues until <strong>completely past and clear</strong>.</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="detailed-breakdown">
+                                <h3>Detailed Breakdown of Rule 13</h3>
+                                
+                                <article class="rule-point">
+                                  <h4>(a) Overtaking Vessel Must Keep Clear</h4>
+                                  <p>"Notwithstanding anything...in Rules 4-18" → This rule <strong>overrides all other right-of-way rules</strong>.</p>
+                                  <h5>Example:</h5>
+                                  <ul>
+                                    <li>Even if a sailboat overtakes a power-driven vessel, the sailboat must yield.</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="rule-point">
+                                  <h4>(b) Legal Definition of Overtaking</h4>
+                                  <p>"More than 22.5° abaft the beam" (behind a line perpendicular to the ship's side).</p>
+                                  <h5>Nighttime test:</h5>
+                                  <ul>
+                                    <li>Can you see only the sternlight (not sidelights) of the vessel ahead?</li>
+                                    <li>Yes = Overtaking situation.</li>
+                                    <li>No = May be crossing/meeting instead.</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="rule-point">
+                                  <h4>(c) If in Doubt, Assume You're Overtaking</h4>
+                                  <p>"When a vessel is in any doubt...she shall assume this is the case" → <strong>Better to yield unnecessarily</strong> than risk collision.</p>
+                                </article>
+                            
+                                <article class="rule-point">
+                                  <h4>(d) Responsibility Persists Until Clear</h4>
+                                  <p>"Any subsequent bearing change doesn't end the overtaking status" → Even if angles shift, the overtaker must keep clear until:</p>
+                                  <ul>
+                                    <li>Completely past the other vessel.</li>
+                                    <li>At a safe distance (no risk of collision).</li>
+                                  </ul>
+                                </article>
+                              </section>
+                            
+                              <section class="importance">
+                                <h3>Why This Rule Matters</h3>
+                                <ul>
+                                  <li>Prevents "race-to-the-front" conflicts in shipping lanes.</li>
+                                  <li>Clarifies responsibility (unlike road traffic, the faster vessel always yields).</li>
+                                  <li>Avoids confusion when angles change mid-maneuver.</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="example">
+                                <h3>Real-World Example</h3>
+                                <ul>
+                                  <li><strong>Scenario:</strong> A cargo ship approaches a slower tanker from 30° behind its beam (sternlight visible).</li>
+                                  <li><strong>Action:</strong> The cargo ship must alter course/slow down until fully past the tanker.</li>
+                                  <li><strong>Mistake:</strong> Assuming it can cross once slightly ahead (still responsible until clear).</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="pitfalls">
+                                <h3>Common Pitfalls</h3>
+                                <ul>
+                                  <li><strong>Misjudging the 22.5° threshold</strong> → Use radar/AIS to confirm angles.</li>
+                                  <li><strong>Assuming power-driven rules apply</strong> → Rule 13 trumps Rule 18 (power vs. sail).</li>
+                                  <li><strong>Ending the overtaking too soon</strong> → Must be completely past and clear.</li>
+                                </ul>
+                              </section>
+                </div>
+            </div>
+                                  <!--===================Rule 14====================-->
+            <div class="content">
+                <h2>Rule 14 - Head-on situation</h2>
+                        <ol type="a">
+                              <li> When two power-driven vessels are meeting on reciprocal or nearly reciprocal courses so as to involve risk of collision each shall alter her course to starboard so that each shall pass on the port side of the other.</li>
+                              <li>Such a situation shall be deemed to exist when a vessel sees the other ahead or nearly ahead and by night she could see the masthead lights of the other in line or nearly in a line and/or both sidelights and by day she observes the corresponding aspect of the other vessel.</li>
+                              <li>When a vessel is in any doubt as to whether such a situation exists she shall assume that it does exist and act accordingly.</li>
+                        </ol>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                                                  <h3>Detailed Breakdown of Rule 14</h3>
+                                
+                                <article class="rule-point">
+                                  <h4>(a) Mandatory Starboard Turn</h4>
+                                  <p>"Each shall alter course to starboard" → <strong>Both ships turn right</strong> to create safe passing distance.</p>
+                                  <p>"Pass on the port side" → <strong>Left side to left side</strong> (like cars driving on the right).</p>
+                                </article>
+                            
+                                <article class="rule-point">
+                                  <h4>(b) Identifying a Head-on Situation</h4>
+                                  <h5>By Night:</h5>
+                                  <ul>
+                                    <li>Both sidelights visible (<strong>red port + green starboard</strong> lights simultaneously).</li>
+                                    <li>Masthead lights <strong>aligned</strong> (one directly above the other).</li>
+                                  </ul>
+                                  <h5>By Day:</h5>
+                                  <ul>
+                                    <li><strong>Bow-on or nearly bow-on</strong> aspect (you see the front of the other ship, not its side).</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="rule-point">
+                                  <h4>(c) If Unsure, Assume Head-on & Turn Right</h4>
+                                  <p>"When in doubt...assume it exists" → <strong>Better to turn unnecessarily</strong> than risk collision.</p>
+                                </article>
+                              </section>
+                            
+                              <section class="importance">
+                                <h3>Why This Rule Matters</h3>
+                                <ul>
+                                  <li>Prevents <strong>last-minute maneuvers</strong> by standardizing passing directions.</li>
+                                  <li>Reduces confusion in <strong>high-speed encounters</strong>.</li>
+                                  <li>Mirrors <strong>road traffic rules</strong> (drive on the right, pass left-to-left).</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="example">
+                                <h3>Real-World Example</h3>
+                                <ul>
+                                  <li><strong>Scenario:</strong> Two cargo ships see each other's red and green lights at night.</li>
+                                  <li><strong>Correct Action:</strong> Both turn starboard to pass port-to-port.</li>
+                                  <li><strong>Mistake:</strong> One holds course, forcing last-second evasion.</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="pitfalls">
+                                <h3>Common Mistakes</h3>
+                                <ul>
+                                  <li><strong>Misjudging crossing vs. head-on</strong> → If you see only one sidelight, it's likely a crossing situation (Rule 15 applies).</li>
+                                  <li><strong>Waiting too long to turn</strong> → Early maneuvers prevent emergencies.</li>
+                                  <li><strong>Assuming the other vessel will comply</strong> → Always be prepared to take further action.</li>
+                                </ul>
+                              </section>
+                </div>
+            </div>
+                                  <!--===================Rule 15====================-->
+            <div class="content">
+                            <h2>Rule 15 - Crossing situation</h2>
+                            <p>
+                              When two power-driven vessels are crossing so as to involve risk of collision, the vessel which has the other on her own starboard side shall keep out of the way and shall, if the circumstances of the case admit, avoid crossing ahead of the other vessel.
+                            </p>
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                                                <p  style="font-size: 18px; font-weight: 600; text-align: center;">Rule 15 establishes right-of-way rules when two power-driven vessels are on crossing courses with risk of collision. This rule only applies to power-driven vessels (not sailboats, fishing vessels, etc.).</p>
+                            
+                              <section class="key-principles">
+                                <h3>Key Principles of Rule 15</h3>
+                                <ul>
+                                  <li><strong>"Give-way" vessel:</strong> The ship that sees the other on its starboard (right) side must yield.</li>
+                                  <li><strong>"Stand-on" vessel:</strong> The ship that sees the other on its port (left) side maintains course/speed.</li>
+                                  <li>Avoid crossing ahead of the other vessel when possible (give-way vessel should pass behind).</li>
+                                  <li>Applies only when risk of collision exists (constant compass bearing + decreasing distance).</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="detailed-breakdown">
+                                <h3>Detailed Breakdown of Rule 15</h3>
+                                
+                                <article class="rule-point">
+                                  <h4>1. Who Yields? (The "Give-Way" Vessel)</h4>
+                                  <ul>
+                                    <li>If another ship is on your <strong>starboard (right) side</strong> → You must take action to avoid collision.</li>
+                                    <li>If another ship is on your <strong>port (left) side</strong> → You hold course/speed (but stay alert).</li>
+                                  </ul>
+                                  <h5>Example Scenario:</h5>
+                                  <ul>
+                                    <li>Ship A sees Ship B on its starboard side → Ship A must yield.</li>
+                                    <li>Ship B sees Ship A on its port side → Ship B maintains course/speed.</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="rule-point">
+                                  <h4>2. How to Yield Properly</h4>
+                                  <ul>
+                                    <li><strong>Preferred action:</strong> Alter course to starboard (right) to pass behind the other vessel.</li>
+                                    <li><strong>Alternative actions:</strong> Slow down or stop to let the other ship pass.</li>
+                                    <li><strong>Avoid:</strong> Crossing ahead of the stand-on vessel (increases collision risk).</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="rule-point">
+                                  <h4>3. When Does Rule 15 Apply?</h4>
+                                  <ul>
+                                    <li>Both vessels are <strong>power-driven</strong> (Rule 12 applies to sailboats, Rule 18 to fishing vessels, etc.).</li>
+                                    <li>Courses intersect at a <strong>constant angle</strong> (not head-on or overtaking).</li>
+                                    <li><strong>Risk of collision</strong> exists (steady bearing + closing distance).</li>
+                                  </ul>
+                                </article>
+                              </section>
+                            
+                              <section class="importance">
+                                <h3>Why This Rule Matters</h3>
+                                <ul>
+                                  <li>Prevents confusion by <strong>clearly assigning responsibility</strong>.</li>
+                                  <li>Reduces <strong>last-minute maneuvers</strong> (stand-on vessel can trust the give-way vessel will act).</li>
+                                  <li>Encourages <strong>safe passing behind</strong> (unlike head-on or overtaking rules).</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="example">
+                                <h3>Real-World Example</h3>
+                                <ul>
+                                  <li><strong>Scenario:</strong> A ferry (Ship A) approaches a cargo ship (Ship B) from the starboard side of Ship B.</li>
+                                  <li><strong>Correct Action:</strong>
+                                    <ul>
+                                      <li>Ship A (give-way) turns starboard or slows to pass behind Ship B.</li>
+                                      <li>Ship B (stand-on) maintains course/speed but monitors Ship A's actions.</li>
+                                    </ul>
+                                  </li>
+                                  <li><strong>Mistake:</strong> Ship A tries to speed up and cross ahead of Ship B (dangerous!).</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="pitfalls">
+                                <h3>Common Mistakes</h3>
+                                <ul>
+                                  <li>Assuming <strong>"bigger ship always yields"</strong> → Size doesn't matter; position does.</li>
+                                  <li><strong>Waiting too long to act</strong> → Give-way vessels should maneuver early and obviously.</li>
+                                  <li><strong>Stand-on vessel changing course</strong> → Only allowed if collision becomes imminent (Rule 17).</li>
+                                </ul>
+                              </section>
+                </div>
+            </div>
+                                  <!--===================Rule 16====================-->
+            <div class="content">
+                  <h2>Rule 16 - Action by Give-Way Vessel</h2>
+                  <p>
+                    Every vessel which is directed to keep out of the way of another vessel shall, as far as possible, take early and substantial action to keep well clear.
+                  </p>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                                                <p style="text-align: center; font-weight: 600; font-size: 18px;">Rule 16 mandates that any vessel required to give way (under Rules 12-15) must take early, decisive action to avoid collision while maintaining a safe passing distance.</p>
+                            
+                              <section class="key-requirements">
+                                <h3>Key Requirements</h3>
+                                
+                                <article class="requirement">
+                                  <h4>Early Action</h4>
+                                  <ul>
+                                    <li>Maneuver well in advance (not last-minute).</li>
+                                    <li><strong>Example:</strong> Turning right at 5 NM away, not 0.5 NM.</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="requirement">
+                                  <h4>Substantial Action</h4>
+                                  <ul>
+                                    <li>Make bold, noticeable changes (e.g., 30° course shift, not 5°).</li>
+                                    <li>Speed reductions should be significant (e.g., halving speed).</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="requirement">
+                                  <h4>Keep Well Clear</h4>
+                                  <ul>
+                                    <li>Ensure adequate CPA (Closest Point of Approach).</li>
+                                    <li>Avoid "just scraping by"—maintain a safe margin.</li>
+                                  </ul>
+                                </article>
+                              </section>
+                            
+                              <section class="importance">
+                                <h3>Why This Rule Matters</h3>
+                                <ul>
+                                  <li><strong>Prevents ambiguity:</strong> Clear maneuvers help the stand-on vessel anticipate your actions.</li>
+                                  <li><strong>Reduces panic:</strong> Early action avoids emergency maneuvers.</li>
+                                  <li><strong>Legal compliance:</strong> Courts assess whether actions were "early and substantial" in collision cases.</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="examples">
+                                <h3>Examples</h3>
+                                <div class="good-examples">
+                                  <h4>✅ Good Compliance:</h4>
+                                  <ul>
+                                    <li>A cargo ship alters course 15° to starboard at 4 NM from a crossing vessel.</li>
+                                    <li>A yacht slows down early to pass behind a ferry.</li>
+                                  </ul>
+                                </div>
+                                <div class="bad-examples">
+                                  <h4>❌ Violations:</h4>
+                                  <ul>
+                                    <li>A tanker makes a 5° course change at 1 NM (too little, too late).</li>
+                                    <li>A speedboat accelerates to cross ahead of a stand-on vessel.</li>
+                                  </ul>
+                                </div>
+                              </section>
+                            
+                              <section class="rule-comparison">
+                                <h3>Comparison with Other Rules</h3>
+                                <ul>
+                                  <li><strong>Rule 17:</strong> Stand-on vessel must maintain course/speed unless the give-way vessel fails to act.</li>
+                                  <li><strong>Rule 8:</strong> General requirements for collision avoidance (Rule 16 is the give-way vessel's specific duty).</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="takeaway">
+                                <h3>Takeaway</h3>
+                                <p>Rule 16 ensures proactive, unambiguous navigation by requiring give-way vessels to:</p>
+                                <ul class="action-items">
+                                  <li>🔹 <strong>Act early</strong> (before close-quarters).</li>
+                                  <li>🔹 <strong>Act decisively</strong> (large enough to be observed).</li>
+                                  <li>🔹 <strong>Achieve true clearance</strong> (not minimal passing distance).</li>
+                                </ul>
+                              </section>
+                </div>
+            </div>
+                                  <!--===================Rule 12====================-->
+            <div class="content">
+                            <h2>Rule 17 - Action by stand-on vessel</h2>
+                            <ol type="a">
+                              <li> 
+                                <ol type="i" class="type-i">
+                                  <li>Where one of two vessels is to keep out of the way the other shall keep her course and speed.</li>
+                                  <li>The latter vessel may, however, take action to avoid collision by her manoeuvre alone, as soon as it becomes apparent to her that the vessel required to keep out of the way is not taking appropriate action in compliance with these Rules.</li>
+
+                                </ol>
+                              </li>
+                              <li>When, from any cause, the vessel required to keep her course and speed finds herself so close that collision cannot be avoided by the action of the give-way vessel alone, she shall take such action as will best aid to avoid collision.</li>
+                              <li>A power-driven vessel which takes action in a crossing situation in accordance with subparagraph (a)(ii) of this Rule to avoid collision with another power-driven vessel shall, if the circumstances at the case admit, not alter course to port for a vessel on her own port side.</li>
+                              <li>This Rule does not relieve the give-way vessel of her obligation to keep out of the way.</li>
+                            </ol>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                  <h3>Rule 17 - Action by Stand-On Vessel</h3>
+                            
+                              <section class="key-principles">
+                                <h3>Key Principles</h3>
+                                
+                                <article class="principle">
+                                  <h4>Stand-On Vessel's Primary Duty</h4>
+                                  <ul>
+                                    <li>Must <strong>maintain course and speed</strong> (to avoid confusing the give-way vessel).</li>
+                                    <li><strong>Exception:</strong> Allowed to act if the give-way vessel fails to comply.</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="principle">
+                                  <h4>When Stand-On Vessel May Take Action</h4>
+                                  <ul>
+                                    <li>Only when <strong>clearly evident</strong> the give-way vessel isn't obeying the rules.</li>
+                                    <li>Must avoid <strong>last-minute maneuvers</strong> (early action still preferred by give-way vessel).</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="principle">
+                                  <h4>Emergency Action</h4>
+                                  <ul>
+                                    <li>If collision is imminent, the stand-on vessel <strong>must take evasive action</strong> (even if it breaks rules).</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="principle">
+                                  <h4>Restriction for Power-Driven Vessels</h4>
+                                  <ul>
+                                    <li>In crossing situations, avoid turning left (port) for a vessel on your port side (to prevent crossing paths).</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="principle">
+                                  <h4>Give-Way Vessel's Responsibility Remains</h4>
+                                  <ul>
+                                    <li>Even if the stand-on vessel acts, the give-way vessel must still fulfill its duty.</li>
+                                  </ul>
+                                </article>
+                              </section>
+                            
+                              <section class="practical-scenarios">
+                                <h3>Practical Scenarios</h3>
+                                
+                                <div class="correct-compliance">
+                                  <h4>✅ Correct Compliance</h4>
+                                  <ul>
+                                    <li><strong>Give-way vessel:</strong> Turns right early to avoid crossing vessel.</li>
+                                    <li><strong>Stand-on vessel:</strong> Holds course until certain the other vessel is yielding.</li>
+                                  </ul>
+                                </div>
+                            
+                                <div class="violations">
+                                  <h4>❌ Violations</h4>
+                                  <ul>
+                                    <li><strong>Stand-on vessel:</strong> Suddenly turns left without cause, causing confusion.</li>
+                                    <li><strong>Give-way vessel:</strong> Fails to act, forcing the stand-on vessel into emergency evasion.</li>
+                                  </ul>
+                                </div>
+                              </section>
+                            
+                              <section class="importance">
+                                <h3>Why This Rule Matters</h3>
+                                <ul>
+                                  <li><strong>Predictability:</strong> Prevents chaotic maneuvers by clarifying roles.</li>
+                                  <li><strong>Safety Net:</strong> Allows stand-on vessels to act if give-way vessels fail.</li>
+                                  <li><strong>Legal Clarity:</strong> Defines liability in collisions (e.g., if a stand-on vessel acts too early vs. too late).</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="key-quote">
+                                <h3>Key Quote</h3>
+                                <blockquote>"Stand on, but stay alert—act only when the give-way vessel forces you to."</blockquote>
+                              </section>
+                </div>
+            </div>
+                                  <!--===================Rule 18====================-->
+            <div class="content">
+                 <h2>Rule 18 - Responsibilities between vessels</h2>
+                            <p>Except where Rule 9, Rule 10, and Rule 13 otherwise require:</p>
+                            <ol type="a">
+                              <li>
+                                A power-driven vessel underway shall keep out of the way of:
+                                <ol type="i" class="type-i">
+                                  <li>a vessel not under command;</li>
+                                  <li>a vessel restricted in her ability to manoeuvre;</li>
+                                  <li>a vessel engaged in fishing;</li>
+                                  <li>a sailing vessel.</li>
+
+                                </ol>
+                              </li>
+                              <li>A sailing vessel underway shall keep out of the way of:
+                                <ol type="i" class="type-i">
+                                  <li>a vessel not under command;</li>
+                                  <li>a vessel restricted in her ability to manoeuvre;</li>
+                                  <li>a vessel engaged in fishing.</li>
+                                </ol>
+                              </li>
+                              <li>A vessel engaged in fishing when underway shall, so far as possible, keep out of the way of:
+                                <ol type="i" class="type-i">
+                                  <li>a vessel not under command;</li>
+                                  <li>a vessel restricted in her ability to manoeuvre.</li>
+                                </ol>
+                              </li>
+                              <li><br>
+                                <ol type="i" class="type-i">
+                                  <li>Any vessel other than a vessel not under command or a vessel restricted in her ability to manoeuvre shall, if the circumstances of the case admit, avoid impeding the safe passage of a vessel constrained by her draught, exhibiting the signals in Rule 28.</li>
+                                  <li>A vessel constrained by her draught shall navigate with particular caution having full regard to her special condition.</li>
+                                </ol>
+                                
+                              </li>
+                              <li>
+                                A seaplane on the water shall, in general, keep well clear of all vessels and avoid impeding their navigation. In circumstances, however, where risk of collision exists, she shall comply with the Rules of this part.
+                              </li>
+                              <li><br>
+                                <ol type="i" class="type-i">
+                                  <li>A WIG craft, when taking off, landing and in flight near the surface, shall keep well clear of all other vessels and avoid impeding their navigation;</li>
+                                  <li>A WIG craft operating on the water surface shall comply with the Rules of this Part as a power-driven vessel.</li>
+                                </ol>
+                                
+                              </li>
+
+                            </ol>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                   <p style="font-size: 18px; font-weight: 600; text-align: center;">Rule 18 establishes a hierarchy of right-of-way between different types of vessels. It clarifies which vessels must give way to others based on their maneuverability and activities.</p>
+                            
+                              <section class="key-principle">
+                                <h3>Key Principle</h3>
+                                <ul>
+                                  <li><strong>Less maneuverable vessels have priority</strong> over more maneuverable ones.</li>
+                                  <li><strong>Exceptions:</strong> Rules 9 (narrow channels), 10 (traffic separation schemes), and 13 (overtaking) take precedence.</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="detailed-breakdown">
+                                <h3>Detailed Breakdown of Rule 18</h3>
+                                
+                                <article class="rule-section">
+                                  <h4>(a) Power-Driven Vessels Must Yield To:</h4>
+                                  <ul>
+                                    <li>
+                                      <strong>Vessel Not Under Command (NUC)</strong>
+                                      <ul>
+                                        <li>Example: Ship with engine failure displaying two black balls (day) or two red lights (night).</li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <strong>Vessel Restricted in Ability to Maneuver (RAM)</strong>
+                                      <ul>
+                                        <li>Example: Dredger, cable layer, or ship launching/recovering aircraft (displays red-white-red lights).</li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <strong>Vessel Engaged in Fishing</strong>
+                                      <ul>
+                                        <li>Example: Trawler with nets (shows two cones pointing together or red-over-white lights).</li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <strong>Sailing Vessel</strong>
+                                      <ul>
+                                        <li>Exception: If the sailing vessel is overtaking (Rule 13 applies).</li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="rule-section">
+                                  <h4>(b) Sailing Vessels Must Yield To:</h4>
+                                  <ul>
+                                    <li>NUC & RAM vessels (Same as above).</li>
+                                    <li>Fishing vessels (But power-driven vessels still yield to sailboats).</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="rule-section">
+                                  <h4>(c) Fishing Vessels Must Yield To:</h4>
+                                  <ul>
+                                    <li>NUC & RAM vessels (But fishing vessels still have priority over power-driven and sailing vessels).</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="rule-section">
+                                  <h4>(d) Vessels Constrained by Draft (CBD)</h4>
+                                  <ul>
+                                    <li>Other vessels (except NUC/RAM) should avoid impeding a CBD vessel (showing three red lights or a cylinder by day).</li>
+                                    <li>CBD vessels must navigate cautiously (they don't have absolute right-of-way but deserve extra space).</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="rule-section">
+                                  <h4>(e) Seaplanes</h4>
+                                  <ul>
+                                    <li>Must generally stay clear of all ships.</li>
+                                    <li>If risk of collision exists, they follow standard COLREGs rules.</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="rule-section">
+                                  <h4>(f) Wing-in-Ground (WIG) Craft</h4>
+                                  <ul>
+                                    <li>In flight: Must avoid all vessels.</li>
+                                    <li>On water: Follows rules as a power-driven vessel.</li>
+                                  </ul>
+                                </article>
+                              </section>
+                            
+                              <section class="hierarchy-summary">
+                                <h3>Hierarchy Summary (Who Yields to Whom?)</h3>
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th>Vessel Type</th>
+                                      <th>Must Yield To</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>Power-Driven Vessel</td>
+                                      <td>NUC, RAM, Fishing, Sailing</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Sailing Vessel</td>
+                                      <td>NUC, RAM, Fishing</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Fishing Vessel</td>
+                                      <td>NUC, RAM</td>
+                                    </tr>
+                                    <tr>
+                                      <td>NUC / RAM</td>
+                                      <td>None (highest priority)</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Constrained by Draft (CBD)</td>
+                                      <td>Others should avoid impeding</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </section>
+                            
+                              <section class="practical-example">
+                                <h3>Practical Example</h3>
+                                <ul>
+                                  <li><strong>Scenario:</strong> A cargo ship (power-driven) approaches a trawler (fishing) and a disabled tanker (NUC).</li>
+                                  <li><strong>Actions:</strong>
+                                    <ul>
+                                      <li>Cargo ship must yield to both the trawler and the NUC tanker.</li>
+                                      <li>Trawler must yield only to the NUC tanker.</li>
+                                      <li>NUC tanker maintains course/speed—all others must avoid it.</li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </section>
+                            
+                              <section class="importance">
+                                <h3>Why This Rule Matters</h3>
+                                <ul>
+                                  <li>Prevents confusion by clearly ranking vessel priorities.</li>
+                                  <li>Protects vulnerable vessels (e.g., fishing boats, disabled ships).</li>
+                                  <li>Aligns with maritime law in collision liability cases.</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="key-quote">
+                                <h3>Key Quote</h3>
+                                <blockquote>"The more limited your maneuverability, the more others must respect your right-of-way."</blockquote>
+                              </section>
+                </div>
+            </div>
+                                  <!--===================Rule 19====================-->
+            <div class="content">
+                                            <h2>Rule 19 - Conduct of Vessels in Restricted Visibility</h2>
+                            <ol type="a">
+                              <li>This Rule applies to vessels not in sight of one another when navigating in or near an area of
+                                restricted visibility.</li>
+                              <li>Every vessel shall proceed at a safe speed adapted to the prevailing circumstances and conditions
+                                of restricted visibility. A power-driven vessel shall have engines ready for immediate manoeuvre.</li>
+                              <li>Every vessel shall have due regard to the prevailing circumstances and conditions of restricted
+                                visibility when complying with the Rules of Section I of this Part.</li>
+                                <li>
+                                  A vessel which detects by radar alone the presence of another vessel shall determine if a closequarters situation is developing and/or risk of collision exists. If so, she shall take avoiding action in
+                                  ample time, provided that when such action consists of an alteration of course, so far as possible the
+                                  following shall be avoided: 
+                                  <ol type="i" style="padding-left: 30px;">
+                                    <li>an alteration of course to port for a vessel forward of the beam, other than for a vessel
+                                      being overtaken;</li>
+                                      <li>
+                                        an alteration of course towards a vessel abeam or abaft the beam.
+                                      </li>
+
+                                  </ol>
+                                </li>
+                                  <li>
+                                        Except where it has been determined that a risk of collision does not exist, every vessel which
+                                          hears apparently forward of her beam the fog signal of another vessel, or which cannot avoid a close
+                                          quarters situation with another vessel forward of her beam, shall reduce her speed to the minimum
+                                          at which she can be kept on her course. She shall if necessary take all her way off and in any event
+                                          navigate with extreme caution until danger of collision is over.
+                                  </li>
+                            </ol>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                  <p style="text-align: center;"><em>(Fog, heavy rain, mist, or other low-visibility conditions)</em></p>
+                              <p style="font-size: 18px; font-weight: 600; text-align: center;">This rule applies when vessels cannot see each other visually (even if detected on radar).</p>
+                            
+                              <section class="key-requirements">
+                                <h3>Key Requirements</h3>
+                                
+                                <article class="requirement">
+                                  <h4>1. Safe Speed & Readiness (Rule 19b)</h4>
+                                  <ul>
+                                    <li>All vessels must reduce to a <strong>"safe speed"</strong> (adjust for radar limitations, traffic density, etc.).</li>
+                                    <li>Power-driven vessels must have <strong>engines ready for immediate maneuver</strong> (e.g., neutral gear in fog).</li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="requirement">
+                                  <h4>2. Radar Use & Early Action (Rule 19d)</h4>
+                                  <ul>
+                                    <li>If you detect another vessel only by radar:
+                                      <ul>
+                                        <li>Determine if <strong>risk of collision exists</strong> (steady bearing + decreasing range).</li>
+                                        <li>Take <strong>early, substantial action</strong> to avoid collision.</li>
+                                      </ul>
+                                    </li>
+                                    <li>Avoid these course changes:
+                                      <ul>
+                                        <li><strong>Port (left) turn</strong> for a vessel ahead of your beam (unless overtaking).</li>
+                                        <li>Turning toward a vessel <strong>abeam or behind you</strong>.</li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="requirement">
+                                  <h4>3. Fog Signal Response (Rule 19e)</h4>
+                                  <ul>
+                                    <li>If you hear a fog signal (e.g., ship horn, bell) forward of your beam:
+                                      <ul>
+                                        <li>Immediately <strong>slow down to minimum steerage speed</strong>.</li>
+                                        <li>Be ready to <strong>stop completely</strong> if needed.</li>
+                                        <li>Proceed with <strong>extreme caution</strong> until danger passes.</li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </article>
+                            
+                                <article class="requirement">
+                                  <h4>4. General Caution (Rule 19c)</h4>
+                                  <ul>
+                                    <li>Even in fog, follow standard navigation rules when applicable, but prioritize:
+                                      <ul>
+                                        <li><strong>Radar-assisted decisions</strong> over visual rules (e.g., Rule 14 head-on doesn't apply if you can't see lights).</li>
+                                        <li><strong>Erring on the side of safety</strong> (assume risk of collision if uncertain).</li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </article>
+                              </section>
+                            
+                              <section class="importance">
+                                <h3>Why This Rule Matters</h3>
+                                <ul>
+                                  <li>Prevents <strong>"radar-assisted collisions"</strong> (e.g., relying solely on tech without human judgment).</li>
+                                  <li>Mandates <strong>conservative maneuvers</strong> (slow speed, avoiding sharp turns toward hidden vessels).</li>
+                                  <li>Aligns with court rulings where <strong>failure to follow Rule 19 led to liability</strong>.</li>
+                                </ul>
+                              </section>
+                            
+                              <section class="real-world-example">
+                                <h3>Real-World Example</h3>
+                                <ul>
+                                  <li><strong>Scenario:</strong> A tanker in fog detects a cargo ship on radar at 3 NM, bearing 10° forward of the beam.</li>
+                                  <li><strong>Correct Action:</strong>
+                                    <ul>
+                                      <li>Reduce speed.</li>
+                                      <li>Turn starboard (right) or slow further to increase CPA.</li>
+                                    </ul>
+                                  </li>
+                                  <li><strong>Avoid:</strong> Turning left (port) toward the cargo ship.</li>
+                                  <li><strong>Mistake:</strong>
+                                    <ul>
+                                      <li>Maintaining speed until visual contact.</li>
+                                      <li>Making small course adjustments (&lt;10°).</li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </section>
+                </div>
+            </div>
+                                  <!--===================Rule 12====================-->
+            <div class="content">
+                <h2>Rule 3 - Application</h2>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                  <p class="brief"><b>Rule 1</b> - </p>
+                </div>
+            </div>
+                                  <!--===================Rule 12====================-->
+            <div class="content">
+                <h2>Rule 3 - Application</h2>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                  <p class="brief"><b>Rule 1</b> - </p>
+                </div>
+            </div>
+                                  <!--===================Rule 12====================-->
+            <div class="content">
+                <h2>Rule 3 - Application</h2>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                  <p class="brief"><b>Rule 1</b> - </p>
+                </div>
+            </div>
+                                                                                   <!--===================Rule 12====================-->
+            <div class="content">
+                <h2>Rule 3 - Application</h2>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                  <p class="brief"><b>Rule 1</b> - </p>
+                </div>
+            </div>
+                                                                                   <!--===================Rule 12====================-->
+            <div class="content">
+                <h2>Rule 3 - Application</h2>
+
+                <div class="rule-explanation">
+                  <h2>Rule Explanation:</h2>
+                  <p class="brief"><b>Rule 1</b> - </p>
+                </div>
+            </div>
+ 
+
+
+          </div> <!--end-->
+            
+    </main>
+    <!--POPOVER-->
+        <!--N.B-->
+        <div popover id="n-b" class="popover">
+            <h3><i class="fas fa-sticky-note"></i> N.B</h3>
+            <h5 style="margin-top: 20px;"><b>Sidebar Content:</b></h5>
+            <p>
+                Click the '<span style="color: rgb(163, 17, 17);"><i class="fas fa-columns"></i></span>' button in the navigation bar to open the sidebar (which lists all available content)
+            </p>
+            <h5 style="margin-top: 20px;"><b>Word Clarifications:</b></h5>
+            <p>Click any bold word (marked with the <i class="fas fa-lightbulb" style="color: rgb(188, 188, 4);"></i>) to view its definition or additional notes.</p>
+        </div>
+    <!--Non-displacement craft-->
+    <div popover id="craft" class="popover">
+        <h3>Non-displacement craft</h3>
+        <img src="images/vessel/craft.jfif" alt="">
+        <p>
+            A non-displacement craft is a type of boat or ship that does not push water aside (displace it) as it moves. Instead, it rides on top of the water at high speeds, often supported by lift (like hydrofoils, hovercraft, or planing hulls).
+        </p>
+    </div>
+        <!--wig craft-->
+        <div popover id="wig-craft" class="popover">
+            <h3>WIG craft</h3>
+            <img src="images/vessel/wig.jfif" alt="">
+            <p>
+                A WIG craft (Wing-in-Ground-effect craft) is a high-speed vehicle that flies just above water or flat land using ground effect (the aerodynamic lift created by air trapped between its wings and the surface).            </p>
+        </div>
+        <!--Seaplane-->
+        <div popover id="seaplanes" class="popover">
+            <h3>Seaplane</h3>
+            <img src="images/vessel/seaplane.jpg" alt="">
+            <p>
+                A seaplane is an aircraft designed to take off from and land on water, using floats or a boat-like hull instead of wheels.
+            </p>
+        </div>
+        <!--Under sail-->
+        <div popover id="under-sail" class="popover">
+            <h3>Vessel under sail</h3>
+            <p>
+                A vessel under sail is any boat or ship that is propelled primarily by wind using sails, rather than by engines or oars.
+            </p>
+        </div>
+        <!--Nets-->
+        <div popover id="nets" class="popover">
+            <h3>Fishing with Nets</h3>
+            <img src="images/vessel/nets.jfif" alt="">
+            <p>Using mesh nets to trap fish.</p>
+        </div>
+        <!--trawls-->
+        <div popover id="trawls" class="popover">
+            <h3>Trawls (Trawl Fishing)</h3>
+            <img src="images/vessel/trawl.jpg" alt="">
+            <p>
+                Dragging a large net (trawl net) along the seafloor/midwater.
+            </p>
+        </div>
+        <!--Fishing with Lines-->
+        <div popover id="lines" class="popover">
+            <h3>Fishing with Lines</h3>
+            <img src="images/vessel/lines.jpg" alt="">
+            <p>
+                Using hooks on lines (handheld or mechanized).
+            </p>
+        </div>
+        <!--trolling lines-->
+        <div popover id="trolling-lines" class="popover">
+            <h3>Trolling lines</h3>
+            <img src="images/vessel/trolling.jpg" alt="">
+            <p>Dragging baited lines behind a moving boat.</p>
+        </div>
+                <!--Keep out the way-->
+        <div popover id="keep-out-the-way" class="popover">
+            <h3>Keep out the way</h3>
+            <p>
+                A vessel required to take early, clear action to avoid collision with another vessel (under COLREGs/International Regulations for Preventing Collisions at Sea).
+            </p>
+        </div>
+        <!--Made fast-->
+        <div popover id="made-fast" class="popover">
+            <h3>Made fast</h3>
+            <p>
+                Securing a line (rope), anchor, or cargo so it cannot move.
+            </p>
+        </div>
+        <!--Rule 4-->
+        <div popover id="rules1" class="popover">
+            <h3>Rules applying in any condition of visibility:</h3>
+            <ul style="list-style-type: none">
+                <li >Rule 5 - Look-out</li>
+                <li>Rule 6 - Safe Speed</li>
+                <li>Rule 7 - Risk of Colision</li>
+                <li>Rule 8 - Action to Avoid Colision</li>
+                <li>Rule 9 - Narrow Channels</li>
+                <li>Rule 10 - Traffic Seperation Schemes </li>
+            </ul>
+        </div>
+
+
+    <footer style="background-color: #f8f9fa; padding: 15px 20px; text-align: center; font-size: 14px; color: #6c757d; border-top: 1px solid #e9ecef;">
+        <p>
+            <a href="www.linkedin.com/in/wahiba-adidi-b70a55255" style="color: #007bff; text-decoration: none;">LinkedIn</a> |
+            <a href="https://github.com/howa9999-coder" style="color: #007bff; text-decoration: none;">GitHub</a> 
+        </p>
+        <a href="#top" style="color: #007bff; text-decoration: none;">Back to top</a>
+        <p>&copy; 2025. All Rights Reserved. | <span style="font-style: italic; color: #888;">Rahmany</span></p>
+    </footer>
+    <script src="js/colreg.js"></script>
+</body>
+</html>
