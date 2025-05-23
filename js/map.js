@@ -1,50 +1,29 @@
-const menuBtn = document.getElementById('menuBtn');
-const navMenu = document.getElementById('navMenu');
-
-menuBtn.addEventListener('click', function() {
-    navMenu.classList.toggle('active');
-    
-    // Toggle between bars and times icon
-    const icon = menuBtn.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-times');
-});
-let sideBar = true
-document.querySelector('#tools').addEventListener('click', function(){
-    const sidebar = document.querySelector('.sidebar')
-    if(sideBar){
-        sidebar.style.display = "block";
-        sideBar = false
-    }else{
-        sidebar.style.display = "none";
-        sideBar = true
-    }
-})
-function toggleContent(button) {
-    const cont = button.closest('.cont');
-    const content = cont.querySelector('.content'); // Assuming your content is inside a div with class 'content'
-
-    if (content.style.display === 'none' || content.style.display === '') {
-        // Show the content
-        content.style.display = 'block';
-        button.innerText = '-';
-        cont.classList.add('expanded');
-    } else {
-        // Hide the content
-        content.style.display = 'none';
-        button.innerText = '+';
-        cont.classList.remove('expanded');
-    }
-}
-function btnFunction(param, btnClose){
-    const contact = document.querySelector(param);
-    const btn = document.querySelector(btnClose);
-    contact.style.display = 'block'
-    btn.innerHTML = "-"
-}
-
 // Initialize the map and set the view to Casablanca
-var map = L.map('map').setView([33.5731, -7.5898], 6);
+
+var map = L.map('map').setView([33.5731, -7.5898], 6); // Default to Casablanca
+
+
+// Try to get user's location
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        function(position) {
+            // Success - center map on user's location
+            map.setView([position.coords.latitude, position.coords.longitude], 12);
+        },
+        function(error) {
+            // Error - keep default Casablanca view
+            console.error("Geolocation error:", error.message);
+        },
+        {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        }
+    );
+} else {
+    // Geolocation not supported - keep default Casablanca view
+    console.log("Geolocation is not supported by this browser");
+}
 
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -64,9 +43,53 @@ var OpenSeaMap = L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.p
     attribution: 'Map data: &copy; <a href="http://www.openseamap.org">OpenSeaMap</a> contributors'
 }).addTo(map);
 
-// Reset view
-function home(){
-    map.setView([33.5731, -7.5898], 6); // Use setView on the existing map instance
+
+	// Get your own free OWM API key at https://www.openweathermap.org/appid - please do not re-use mine!
+	var OWM_API_KEY = '06aac0fd4ba239a20d824ef89602f311';
+
+	var clouds = L.OWM.clouds({opacity: 0.8, legendImagePath: 'files/NT2.png', appId: OWM_API_KEY});
+	var cloudscls = L.OWM.cloudsClassic({opacity: 0.5, appId: OWM_API_KEY});
+	var precipitation = L.OWM.precipitation( {opacity: 0.5, appId: OWM_API_KEY} );
+	var precipitationcls = L.OWM.precipitationClassic({opacity: 0.5, appId: OWM_API_KEY});
+	var rain = L.OWM.rain({opacity: 0.5, appId: OWM_API_KEY});
+	var raincls = L.OWM.rainClassic({opacity: 0.5, appId: OWM_API_KEY});
+	var snow = L.OWM.snow({opacity: 0.5, appId: OWM_API_KEY});
+	var pressure = L.OWM.pressure({opacity: 0.4, appId: OWM_API_KEY});
+	var pressurecntr = L.OWM.pressureContour({opacity: 0.5, appId: OWM_API_KEY});
+	var temp = L.OWM.temperature({opacity: 0.5, appId: OWM_API_KEY});
+	var wind = L.OWM.wind({opacity: 0.5, appId: OWM_API_KEY});
+
+ 	var localLang = getLocalLanguage();
+
+	var city = L.OWM.current({intervall: 15, imageLoadingUrl: 'leaflet/owmloading.gif', minZoom: 5,
+			appId: OWM_API_KEY});
+
+
+
+// Reset view - tries geolocation first, falls back to Casablanca
+function home() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                // Success - center map on user's location
+                map.setView([position.coords.latitude, position.coords.longitude], 11);
+            },
+            function(error) {
+                // Error - fall back to default Casablanca view
+                console.error("Geolocation error:", error.message);
+                map.setView([33.5731, -7.5898], 6);
+            },
+            {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            }
+        );
+    } else {
+        // Geolocation not supported - use default Casablanca view
+        console.log("Geolocation is not supported by this browser");
+        map.setView([33.5731, -7.5898], 6);
+    }
 }
 //full screen
 var btn = document.getElementById("full-screen");
@@ -111,55 +134,7 @@ var measureControl = L.control.measure({
   });
   
   measureControl.addTo(map);
-//draw
-///////////////////DRAW PLUG IN //////////////////////////////////////////////////////////
-
-// Initialize the Geoman Pro plugin with all available controls
-/* var drawControl = map.pm.addControls({
-    position: 'topleft',
-    drawCircle: true,
-    drawRectangle: true,
-    drawPolygon: true,
-    drawMarker: true,
-    drawCircleMarker: true,
-    drawPolyline: true,
-    cutPolygon: true,
-    removalMode: true,
-    editMode: true,
-    dragMode: true,
-    pinningOption: true,
-    snappingOption: true,
-    snapping: {
-      // Configure snapping options if needed
-    },
-    tooltips: true,
-    templineStyle: {
-      color: 'green',
-      dashArray: '5,5',
-    },
-    hintlineStyle: {
-      color: 'white',
-      dashArray: '1,5',
-    },
-    pathOptions: {
-      color: 'red',
-      fillColor: 'blue',
-      fillOpacity: 0.4,
-    },
-  });
-  // Disable drawing mode for circles and markers by default
-  map.pm.disableDraw('Circle');
-  map.pm.disableDraw('Marker');
-  var drawLayer;
- // Create a layer group to hold the drawn shapes
-drawLayer = L.layerGroup().addTo(map);
-
-// Listen to when shapes are created and add them to the drawLayer
-map.on('pm:create', function(e) {
-  const layer = e.layer;
-  drawLayer.addLayer(layer);
-}); */
-
+//////////////////DRAW PLUG IN //////////////////////////////////////////////////////////
 // Get the color picker element
 const colorPicker = document.getElementById('color-picker');
 
@@ -195,7 +170,7 @@ var drawControl = map.pm.addControls({
   },
 });
 
-// Disable drawing mode for circles and markers by default
+// Disable drawing mode for circles and markers by default (if needed)
 map.pm.disableDraw('Circle');
 map.pm.disableDraw('Marker');
 
@@ -211,123 +186,18 @@ colorPicker.addEventListener('input', function() {
   });
 });
 
-// Add new shapes to the layer group
+// Add new shapes to the layer group 
 map.on('pm:create', function(e) {
   drawLayer.addLayer(e.layer);
+  
+  // Add minimal properties if needed (without popup)
+  e.layer.feature = e.layer.feature || {};
+  e.layer.feature.type = "Feature";
+  e.layer.feature.properties = {
+    createdAt: new Date().toISOString()
+  };
 });
 
-
-let currentLayer = null;
-
-// Show form when a feature is created
-map.on('pm:create', function(e) {
-  currentLayer = e.layer;
-  document.getElementById('feature-form').style.display = 'block';
-});
-// Save feature data
-document.getElementById('save-feature').addEventListener('click', function() {
-    if (currentLayer) {
-      const name = document.getElementById('feature-name').value;
-      const description = document.getElementById('feature-desc').value;
-      const type = document.getElementById('feature-type').value;
-      
-      // Store properties
-      currentLayer.feature = currentLayer.feature || {};
-      currentLayer.feature.type = "Feature";
-      currentLayer.feature.properties = {
-        name: name,
-        description: description,
-        type: type,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
-      };
-      
-      // Add to layer group
-      drawLayer.addLayer(currentLayer);
-      
-      // Create editable popup content
-      updatePopupContent(currentLayer);
-      
-      // Close form and reset
-      document.getElementById('feature-form').style.display = 'none';
-      resetForm();
-      currentLayer = null;
-    }
-  });
-  function updatePopupContent(layer) {
-    const properties = layer.feature.properties;
-    let popupContent = `
-      <div class="feature-popup">
-        <h3>Feature Properties</h3>
-        <div id="feature-properties-view">
-          ${Object.entries(properties).map(([key, value]) => `
-            <div class="property-row">
-              <strong>${key}:</strong> <span id="prop-${key}">${value}</span>
-            </div>
-          `).join('')}
-        </div>
-        <div id="feature-properties-edit" style="display:none;">
-          <form id="edit-properties-form">
-            ${Object.entries(properties).map(([key, value]) => `
-              <div class="form-group">
-                <label for="edit-${key}">${key}:</label>
-                <input type="text" id="edit-${key}" value="${value}" class="form-control">
-              </div>
-            `).join('')}
-            <button type="submit" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-secondary cancel-edit">Cancel</button>
-          </form>
-        </div>
-        <button id="edit-properties-btn" class="btn btn-sm btn-warning">Edit</button>
-      </div>
-    `;
-    
-    layer.bindPopup(popupContent, { maxWidth: 300 });
-    
-    // When popup opens, set up event listeners
-    layer.on('popupopen', function() {
-      const popup = layer.getPopup();
-      const content = popup.getElement();
-      
-      // Edit button click handler
-      content.querySelector('#edit-properties-btn').addEventListener('click', function() {
-        content.querySelector('#feature-properties-view').style.display = 'none';
-        content.querySelector('#feature-properties-edit').style.display = 'block';
-        this.style.display = 'none';
-      });
-      
-      // Cancel edit button
-      content.querySelector('.cancel-edit').addEventListener('click', function() {
-        content.querySelector('#feature-properties-view').style.display = 'block';
-        content.querySelector('#feature-properties-edit').style.display = 'none';
-        content.querySelector('#edit-properties-btn').style.display = 'block';
-      });
-      
-      // Form submit handler
-      content.querySelector('#edit-properties-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Update properties
-        Object.keys(properties).forEach(key => {
-          const input = content.querySelector(`#edit-${key}`);
-          properties[key] = input.value;
-          content.querySelector(`#prop-${key}`).textContent = input.value;
-        });
-        
-        // Add updated timestamp
-        properties.updatedAt = new Date().toISOString();
-        
-        // Switch back to view mode
-        content.querySelector('#feature-properties-view').style.display = 'block';
-        content.querySelector('#feature-properties-edit').style.display = 'none';
-        content.querySelector('#edit-properties-btn').style.display = 'block';
-        
-        // Close and reopen popup to ensure proper rendering
-        layer.closePopup();
-        setTimeout(() => layer.openPopup(), 50);
-      });
-    });
-  }
   function down() {
     if (!drawLayer || drawLayer.getLayers().length === 0) {
       alert('No drawn elements to download!');
@@ -370,107 +240,6 @@ document.getElementById('save-feature').addEventListener('click', function() {
     downloadAnchor.click();
     document.body.removeChild(downloadAnchor);
   }
-/* 
-// Save feature data
-document.getElementById('save-feature').addEventListener('click', function() {
-  if (currentLayer) {
-    const name = document.getElementById('feature-name').value;
-    const description = document.getElementById('feature-desc').value;
-    const type = document.getElementById('feature-type').value;
-    
-    // Store properties
-    currentLayer.feature = currentLayer.feature || {};
-    currentLayer.feature.type= "Feature",
-    currentLayer.feature.properties = {
-      name: name,
-      description: description,
-      type: type,
-      createdAt: new Date().toISOString()
-    };
-    
-    // Add to layer group
-    drawLayer.addLayer(currentLayer);
-    
-    // Add popover with the data
-    currentLayer.bindPopup(`
-      <b>${name || 'Unnamed Feature'}</b><br>
-      Type: ${type}<br>
-      ${description ? 'Description: ' + description : ''}
-    `);
-    
-    // Close form and reset
-    document.getElementById('feature-form').style.display = 'none';
-    resetForm();
-    currentLayer = null;
-  }
-});
-
-// Cancel button
-document.getElementById('cancel-feature').addEventListener('click', function() {
-  if (currentLayer) {
-    map.removeLayer(currentLayer);
-    document.getElementById('feature-form').style.display = 'none';
-    resetForm();
-    currentLayer = null;
-  }
-});
-
-// Reset form function
-function resetForm() {
-  document.getElementById('feature-name').value = '';
-  document.getElementById('feature-desc').value = '';
-  document.getElementById('feature-type').value = 'building';
-}
-
-// Make features clickable to show popup
-map.on('click', function(e) {
-  // This ensures clicks on features will trigger their popups
-  if (e.originalEvent && e.originalEvent.propagatedFrom) {
-    e.originalEvent.propagatedFrom.fire('click');
-  }
-});
-
-function down() {
-    if (!drawLayer || drawLayer.getLayers().length === 0) {
-      alert('No drawn elements to download!');
-      return;
-    }
-    
-    const geoJson = {
-      type: 'FeatureCollection',
-      features: drawLayer.getLayers().map(layer => {
-        if (layer instanceof L.Marker) {
-          return {
-            type: 'Feature',
-            geometry: {
-              type: 'Point',
-              coordinates: [layer.getLatLng().lng, layer.getLatLng().lat]
-            },
-            properties: layer.feature?.properties || {} // Include any stored properties
-          };
-        }
-        
-        // For other layer types, ensure properties are included
-        const geojson = layer.toGeoJSON();
-        if (layer.feature?.properties) {
-          geojson.properties = {
-            ...geojson.properties,
-            ...layer.feature.properties
-          };
-        }
-        return geojson;
-      })
-    };
-    
-    // Create a download link
-    const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(geoJson, null, 2));
-    const downloadAnchor = document.createElement('a');
-    downloadAnchor.setAttribute('href', dataStr);
-    downloadAnchor.setAttribute('download', 'drawn_elements.geojson');
-    document.body.appendChild(downloadAnchor);
-    downloadAnchor.click();
-    document.body.removeChild(downloadAnchor);
-  } */
 
 //LAYER CONTROL
 var baseMaps = {
@@ -478,111 +247,23 @@ var baseMaps = {
     "OpenStreetMap": osm,
     "Google Sat": googleSat
   };
+  	var overlayMaps = {};
+	overlayMaps[getI18n('OpenSeaMap')] = OpenSeaMap;
+	overlayMaps[getI18n('Clouds')] = clouds;
+	overlayMaps[getI18n('Cloudscls')] = cloudscls;
+	overlayMaps[getI18n('Precipitation')] = precipitation;
+	overlayMaps[getI18n('Precipitationcls')] = precipitationcls;
+	overlayMaps[getI18n('Rain')] = rain;
+	overlayMaps[getI18n('Raincls')] = raincls;
+	overlayMaps[getI18n('Snow')] = snow;
+	overlayMaps[getI18n('Temp')] = temp;
+	overlayMaps[getI18n('Windspeed')] = wind;
+	overlayMaps[getI18n('Pressure')] = pressure;
+	overlayMaps[getI18n('Presscont')] = pressurecntr;
+	overlayMaps[getI18n('City') + " (min Zoom 5)"] = city;
+  overlayMaps[getI18n('Drawing')] = drawLayer;
   
-  var overlayMaps = {
-    "OpenSeaMap": OpenSeaMap,
-    "Drawing layer": drawLayer
-  };
- var loadedLayers = {}; // To store loaded layers for searching
-// GeoJSON data variable
-var dataJson = {
-  "geojsonLayers": [
-    {
-      "name": "Lighthouse",
-      "type": "point",
-      "link": "../json/myGeojsonLayers/phares.geojson",
-      "color": "#FF5733"
-    },
-    {
-      "name": "Ports",
-      "type": "point",
-      "link": "../json/myGeojsonLayers/ports.geojson",
-      "color": "#2980B9"
-    },
-    {
-      "name": "Territorial Sea",
-      "type": "polygon",
-      "link": "../json/myGeojsonLayers/12NM.geojson",
-      "color": "#2ECC71"
-    },
-    {
-      "name": "Internal Waters",
-      "type": "polygon",
-      "link": "../json/myGeojsonLayers/Internal_waters.geojson",
-      "color": "#3498DB"
-    },
-    {
-      "name": "Contiguous Zone",
-      "type": "polygon",
-      "link": "../json/myGeojsonLayers/24NM.geojson",
-      "color": "#8E44AD"
-    },
-    {
-      "name": "Exclusive Economic Zone",
-      "type": "polygon",
-      "link": "../json/myGeojsonLayers/ZEEpoly.geojson",
-      "color": "#F1C40F"
-    },
-    {
-      "name": "MPA",
-      "type": "polygon",
-      "link": "../json/myGeojsonLayers/AMP_Maroc.geojson",
-      "color": "#27AE60"
-    }
-  ]
-};
-// Load and process layers
-function loadLayers() {
-  const layerPromises = dataJson.geojsonLayers.map(layerInfo => {
-      return fetch(layerInfo.link)
-          .then(response => {
-              if (!response.ok) throw new Error(`Failed to load ${layerInfo.link}`);
-              return response.json();
-          })
-          .then(geojson => {
-              const layer = L.geoJSON(geojson, {
-                  pointToLayer: (feature, latlng) => {
-                      return layerInfo.type === 'point' 
-                          ? L.circleMarker(latlng, {
-                              radius: 5,
-                              color: layerInfo.color || 'blue',
-                              fillOpacity: 0.8
-                          })
-                          : undefined;
-                  },
-                  style: layerInfo.type === 'polygon' ? {
-                      color: layerInfo.color || 'blue'
-                  } : undefined,
-                  onEachFeature: (feature, layer) => {
-                      const properties = Object.entries(feature.properties || {})
-                          .map(([key, value]) => `<b>${key}:</b> ${value}`)
-                          .join('<br>');
-                      layer.bindPopup(`<b>${layerInfo.name}</b><br>${properties}`);
-                  }
-              });
-              // Store layer for overlay and searching
-              overlayMaps[layerInfo.name] = layer;
-              loadedLayers[layerInfo.name] = geojson;
-              // Populate the select dropdown
-               const selectLayer = document.querySelector('#select-layer');
-              // Check if the option already exists before adding
-              if (![...selectLayer.options].some(option => option.value === layerInfo.name)) {
-                  const option = document.createElement('option');
-                  option.value = layerInfo.name; // Assign the layer name as the value
-                  option.textContent = layerInfo.name; // Display the layer name as the option text
-                  selectLayer.appendChild(option); // Add the option to the select element
-              } 
-              return layer;
-          });
-  });
-  return Promise.all(layerPromises);
-}
-// Function to add the layer control
-function layerControl() {
-L.control.layers(baseMaps, overlayMaps).addTo(map);
-}
-// Initialize and load the layers
-loadLayers().catch(error => console.error(error));
+var layerControl = L.control.layers(baseMaps, overlayMaps, {collapsed: true}).addTo(map);
 
 //Add scalebar to map
 L.control.scale({metric: true, imperial: false, maxWidth: 100}).addTo(map);
@@ -596,11 +277,9 @@ function onMapMove(e){
     coordinates.innerHTML = `
     <div>
     <p> <b> Lat: </b> ${lat} </p>
-        <p> <b> Lng: </b> ${lng} </p>
-
+    <p> <b> Lng: </b> ${lng} </p>
     </div>
     `;
-
 }
 map.on('mousemove', onMapMove)
 
@@ -710,3 +389,5 @@ function onMapClick(e) {
   }
 }   
 map.on('click', onMapClick)
+
+
