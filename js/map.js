@@ -286,7 +286,7 @@ map.on('mousemove', onMapMove)
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ Weather Forcast
 
-const checkbox = document.getElementById("myCheckbox");
+/* const checkbox = document.getElementById("myCheckbox");
 const dailyCheckbox = document.getElementById("myDailyCheckbox");
 const weatherResult = document.getElementById("weather-result");
 const weatherResult2 = document.getElementById("weather-result2");
@@ -388,6 +388,123 @@ function onMapClick(e) {
     getData3();
   }
 }   
-map.on('click', onMapClick)
+map.on('click', onMapClick) */
+
+// Cache DOM elements
+const elements = {
+  checkbox: document.getElementById("myCheckbox"),
+  dailyCheckbox: document.getElementById("myDailyCheckbox"),
+  weatherResult: document.getElementById("weather-result"),
+  weatherResult2: document.getElementById("weather-result2"),
+  dailyWeatherResult: document.getElementById("daily-weather-result")
+};
+
+// API endpoints configuration
+const apiConfig = {
+  weather: (lat, lng) => 
+    `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m`,
+  
+  marine: (lat, lng) =>
+    `https://marine-api.open-meteo.com/v1/marine?latitude=${lat}&longitude=${lng}&current=wave_height,swell_wave_height,swell_wave_direction,swell_wave_period,ocean_current_velocity,ocean_current_direction,sea_surface_temperature,wind_wave_direction,sea_level_height_msl&wind_speed_unit=kn`,
+  
+  dailyMarine: (lat, lng) =>
+    `https://marine-api.open-meteo.com/v1/marine?latitude=${lat}&longitude=${lng}&daily=wave_direction_dominant,wind_wave_direction_dominant,swell_wave_height_max,swell_wave_direction_dominant,swell_wave_period_max&forecast_days=1&wind_speed_unit=kn`
+};
+
+// Generic fetch function with error handling
+async function fetchData(url, errorElement) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    if (errorElement) {
+      errorElement.innerHTML = "Error loading data";
+    }
+    return null;
+  }
+}
+
+// Display loading state
+function showLoading(element) {
+  if (element) {
+    element.innerHTML = "<div class='loading'>Loading...</div>";
+  }
+}
+
+// Weather data display functions
+function displayWeatherData(element, lat, lng, data) {
+  if (!element || !data) return;
+  
+  element.innerHTML = `
+    <div>Lat: ${lat}</div>
+    <div>Lng: ${lng}</div>
+    <div><b>Temperature:</b> ${data.current.temperature_2m} °C</div>
+    <div><b>Wind Speed:</b> ${data.current.wind_speed_10m} km/h</div>
+  `;
+}
+
+function displayMarineData(element, data) {
+  if (!element || !data) return;
+  
+  const { current } = data;
+  element.innerHTML = `
+    <div><b>Ocean Current Direction:</b> ${current.ocean_current_direction} °</div>
+    <div><b>Ocean Current Velocity:</b> ${current.ocean_current_velocity} kn</div>
+    <div><b>Sea Level Height:</b> ${current.sea_level_height_msl} m</div>
+    <div><b>Sea Surface Temperature:</b> ${current.sea_surface_temperature} °C</div>
+    <div><b>Swell Wave Direction:</b> ${current.swell_wave_direction} °</div>
+    <div><b>Swell Wave Height:</b> ${current.swell_wave_height} m</div>
+    <div><b>Swell Wave Period:</b> ${current.swell_wave_period} s</div>
+    <div><b>Wave Height:</b> ${current.wave_height} m</div>
+    <div><b>Wind Wave Direction:</b> ${current.wind_wave_direction} °</div>
+  `;
+}
+
+function displayDailyMarineData(element, lat, lng, data) {
+  if (!element || !data) return;
+  
+  const { daily } = data;
+  element.innerHTML = `
+    <div>Lat: ${lat}</div>
+    <div>Lng: ${lng}</div>
+    <div><b>Wave Direction Dominant:</b> ${daily.wave_direction_dominant} °</div>
+    <div><b>Wind Wave Direction Dominant:</b> ${daily.wind_wave_direction_dominant} °</div>
+    <div><b>Swell Wave Direction Dominant:</b> ${daily.swell_wave_direction_dominant} °</div>
+    <div><b>Swell Wave Height Max:</b> ${daily.swell_wave_height_max} m</div>
+    <div><b>Swell Wave Period Max:</b> ${daily.swell_wave_period_max} s</div>
+  `;
+}
+
+// Main click handler
+async function onMapClick(e) {
+  const { lat, lng } = e.latlng;
+  
+  if (elements.checkbox.checked) {
+    // Show loading states
+    showLoading(elements.weatherResult);
+    showLoading(elements.weatherResult2);
+    
+    // Fetch weather and marine data in parallel
+    const [weatherData, marineData] = await Promise.all([
+      fetchData(apiConfig.weather(lat, lng), elements.weatherResult),
+      fetchData(apiConfig.marine(lat, lng), elements.weatherResult2)
+    ]);
+    
+    // Display results
+    displayWeatherData(elements.weatherResult, lat, lng, weatherData);
+    displayMarineData(elements.weatherResult2, marineData);
+  }
+
+  if (elements.dailyCheckbox.checked) {
+    showLoading(elements.dailyWeatherResult);
+    const dailyMarineData = await fetchData(apiConfig.dailyMarine(lat, lng), elements.dailyWeatherResult);
+    displayDailyMarineData(elements.dailyWeatherResult, lat, lng, dailyMarineData);
+  }
+}
+
+// Add event listener
+map.on('click', onMapClick);
 
 
