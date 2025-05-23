@@ -427,9 +427,18 @@ select{
                             border-width: 0 2px 2px 0;
                             transform: rotate(45deg);
                         }
-                        .note{
-                          font-weight: 500;
-                          font-size: 11px;
-                          text-align: justify;
-                          margin: 10px;
-                        }
+.popover{
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 30px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.popover h3{
+    color: #007bff;
+    margin-bottom: 20px;
+    
+}
